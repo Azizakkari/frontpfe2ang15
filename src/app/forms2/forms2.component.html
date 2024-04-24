@@ -1,0 +1,27 @@
+ <div *ngFor="let p of mesproc">
+    <div class="panel panel-info">
+      <div class="panel-heading">{{ p.nom }}</div>
+      <div class="panel-body">
+        <table class="table table-condensed">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>code</th>
+              <th>revision</th>
+              <th>date d'application</th>
+            </tr>
+          </thead>
+           <tbody>
+            <tr *ngFor="let t of p.formulaires">
+              <td>{{ t.id }}</td>
+              <td>{{ t.nomforms }}</td>
+              <td>{{ t.code }}</td>
+              <td>{{ t.revision }}</td>
+              <td>{{t.date_d_application}}</td>          
+            </tr>
+          </tbody> 
+        </table> 
+      </div>
+    </div>
+  </div> 

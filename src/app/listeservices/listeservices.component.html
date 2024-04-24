@@ -1,0 +1,76 @@
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center">
+            <h3>LISTE DES SERVICES</h3>
+        </div>
+        <div class="panel-body">
+            <mat-list>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-list-item>
+                    <h2>Liste des services</h2>
+                </mat-list-item>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <td> <button mat-raised-button color="success" (click)="evaluateboleann()"><b>Ajouter un
+                            service</b></button></td>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+            </mat-list>
+            <div class="container" *ngIf="mybolean">
+                <h2>Nouveau service</h2>
+
+                <form (ngSubmit)="onSubmit()">
+                    <label for="name">Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="nom" placeholder="entrez votre nom" name="nom"
+                            [(ngModel)]="monservice.nom">
+                    </div>
+                  
+                    <label for="price">Description:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="description"
+                            placeholder="entrez votre description" name="description"
+                            [(ngModel)]="monservice.description">
+                    </div>
+                  
+                    <label for="category">Direction:</label>
+                    <select id="direction" [(ngModel)]="monservice.direction" name="category" required>
+                      <option *ngFor="let d of mesdirections" [ngValue]="d">{{ d.nom }}</option>
+                    </select>
+                  
+                    <button type="submit">Add service</button>
+                  </form>
+            </div>
+            <div *ngIf="!mybolean">
+                
+            <table class="table table-bordered ">
+                <thead>
+                    <tr class="success">
+                    </tr>
+                    <th>id</th>
+                    <th>nom</th>
+                    <th>description</th>
+                    <th>direction</th>
+                    <th>Suppression</th>
+                    <th> Mise à jour</th>
+                </thead>
+                <tbody>
+                 <tr *ngFor="let monservice of messervices">
+                        <td>{{monservice.id}}</td>
+                        <td>{{monservice.nom}}</td>
+                        <td>{{monservice.description}}</td>
+                        <td>{{monservice.direction?.nom}}</td>
+                        <td> <button mat-raised-button color="warn" (click)="deletservicebyid(monservice.id)">Suppression</button></td>
+                        <button mat-raised-button color="primary">Mettre à jour</button>
+                    </tr>
+                    
+            </table>
+            </div>
+            
+        </div>
+    </div>
+</div>
