@@ -1,0 +1,22 @@
+.my-form{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  .full-width {
+    width: 100%;
+  }
+  .container {
+    display: flex;
+    justify-content: center; /* Align items horizontally */
+    align-items: center; /* Align items vertically */
+    height: 50vh; /* Adjust as needed */
+  }
+  .centered-span {
+    display: flex;
+    justify-content: center; /* Centre horizontalement */
+    align-items: center; /* Centre verticalement */
+    height: 100%; /* Assurez-vous que le conteneur occupe toute la hauteur */
+    width: 100%; /* Assurez-vous que le conteneur occupe toute la largeur */
+  }
+ 

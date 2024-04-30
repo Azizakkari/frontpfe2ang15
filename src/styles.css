@@ -5,7 +5,7 @@
     font-weight: 400;
   } */
 
- 
+
 
    
     
@@ -15,3 +15,12 @@
   
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.mat-warn-button {
+  background-color: #ff0000; /* Red color for warn */
+  color: #fff; /* White text color */
+}
+.mat-primary-button {
+  background-color: #007bff; /* Blue color for primary */
+  color: #fff; /* White text color */
+}

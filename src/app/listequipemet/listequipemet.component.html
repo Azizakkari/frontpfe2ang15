@@ -1,0 +1,117 @@
+
+<div class="container-fluid">
+    <div class="panel panel-primary">
+        <div class="panel-heading text-center"><h3>LISTE DES EQUIPEMENTS</h3></div>
+        <div class="panel-body">
+            <mat-list>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-list-item><h2>Liste des equipements</h2></mat-list-item>
+                
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+               
+                <td> <button mat-raised-button color="success" (click)="evaluatebolean()"><b>Ajouter un equipement</b></button></td>
+             
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+              </mat-list>
+        
+          <div class="container" *ngIf="mybolean">
+            <h2>Nouveau equipement</h2>
+            <form class="form-horizontal" action="/action_page.php">
+              
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="date d'acquisition">Date d'acquisition:</label>
+                <div class="col-sm-10">
+                  <input type="date" class="form-control" id="date d'acquisition" placeholder="entrez votre date d'acquisition" name="date d'acquisition" [(ngModel)]="newequipe.date_acquisition">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="configuration">Configuration:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="configuration" placeholder="entrez votre configuration" name="configuration"  [(ngModel)]="newequipe.configuration">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="etat">Etat:</label>
+                <div class="col-sm-10">
+                  <input type="text" class="form-control" id="etat" placeholder="entrez votre etat" name="etat"  [(ngModel)]="newequipe.etat">
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-sm-2" for="reservable">Reservable:</label>
+                <div class="col-sm-10">
+                  <input type="checkbox" class="form-control" id="reservable" placeholder="Entez votre reservable" name="reservable"  [(ngModel)]="newequipe.reservable">
+                </div>
+            </div>
+             
+              
+              <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                  <button type="submit" class="btn btn-primary" (click)=" addequipe()" >Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        
+   
+        
+           
+            <table class="table table-bordered text-center"  *ngIf="!mybolean" >
+              <thead>
+                <tr class="success">
+                </tr>
+                
+                 <th >id</th>
+                  <th>date d'acquisition</th>
+                  <th>configuration</th>
+                  <th>etat</th>
+                  <th>reservable</th>
+               
+                    
+                 
+        
+                  <th>Suppression</th>
+                  <th> Mise à jour</th>
+                
+               
+        
+              </thead>
+              
+              <tbody>
+                
+               
+                    
+           
+                <tr *ngFor="let equip of  equipement">
+                     
+                        <td>{{equip.id}}</td>
+                        <td>{{equip.date_acquisition}}</td>
+                        <td>{{equip.configuration}}</td>
+                        <td>{{equip.etat}}</td>
+                        <td>{{equip.reservable}}</td>
+                       
+                        
+                 
+                        <td> <button mat-raised-button color="warn"  (click)="deletequipementbyid(equip.id)">Suppression</button></td>
+                        <td><button mat-raised-button color="primary"  (click)="updateUser(equip.id)"> Mise à jour</button></td>
+                    </tr>
+                
+                
+        
+        
+              
+            </table>
+       
+        </div>
+      </div>
+    
+      
+
+  </div>
+ 
+

@@ -12,6 +12,13 @@ export class Forms2Component {
   mesproc:any[]=jsondataproc.procedures;
   constructor(private mesusers:MesusersService) { }
 
+  little='angular-bootstrap-scaffolding';
+filter: String  = '' ;
+  
+
+
+
+
   ngOnInit(): void { 
    
   }

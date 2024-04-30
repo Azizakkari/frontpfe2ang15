@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Leservice } from '../Leservice';
 import { Direction } from '../direction';
 import { MesusersService } from '../mesusers.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-listeservices',
@@ -21,9 +21,10 @@ export class ListservicesComponent {
   };
   mesdirections: Direction[]=[];
   mybolean: boolean=false;
+  mybolean2: boolean=false;
   messerv: Leservice=new Leservice();
   messervices?: Leservice[];
-  constructor(private mesusers: MesusersService, private router: Router){}
+  constructor(private mesusers: MesusersService, private router: Router , private route: ActivatedRoute){}
   ngOnInit(): void{
     this.mesusers.getAlldirection().subscribe(data=>{
       this.mesdirections = data;
@@ -45,8 +46,7 @@ export class ListservicesComponent {
   
 
 
-  updateservice(id?:number){
-  }
+ 
   deletservicebyid(id?:number) {
 
     this.mesusers.deletservicebyid(id).subscribe(
@@ -68,7 +68,7 @@ export class ListservicesComponent {
     this.mesusers.ajouterservice(this.monservice).subscribe(
       () => {
         console.log('Service added successfully');
-        alert("Service added successfully");
+        alert(this.monservice.nom + " added successfully");
 
         this.mybolean = !this.mybolean;
         this.ngOnInit();
@@ -80,8 +80,34 @@ export class ListservicesComponent {
     );
   }
 
+
+
+
+  serviceDetails(id?: number){
+    this.mybolean2=true;
+    this.mesusers.getServbyId(id).subscribe((data: any) => {
+      console.log(data);
+      this.monservice=data;
+      
+    });
+  
+  }
+  Update() {
+    console.log(this.monservice);
+    if (this.monservice?.id) { // check if id has a value
+      this.mesusers.updateservice(this.monservice.id, this.monservice).subscribe(() => {
+        this.mybolean2 = !this.mybolean2;
+        alert("Votre mise a jour a été effectuée avec succées")
+        this.ngOnInit();
+      });
+    }
+  }
+
   evaluateboleann(){
     this.mybolean=!this.mybolean;
   }
-
+  evaluatebolean2(){
+    
+    this.mybolean2 = !this.mybolean2;
+  }
 }

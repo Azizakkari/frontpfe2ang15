@@ -10,6 +10,12 @@ import { LienutileComponent } from './lienutile/lienutile.component';
 import { ListservicesComponent } from './listeservices/listeservices.component';
 import { ListdirectionComponent } from './listdirection/listdirection.component';
 import { Forms2Component } from './forms2/forms2.component';
+import { ListesalleComponent } from './listesalle/listesalle.component';
+import { ListecategorieComponent } from './listecategorie/listecategorie.component';
+import { ListereservationComponent } from './listereservation/listereservation.component';
+import { ListequipemetComponent } from './listequipemet/listequipemet.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 
 const routes: Routes = [
@@ -24,7 +30,15 @@ const routes: Routes = [
  {path: 'lienutile', component:LienutileComponent},
  {path: 'gestionservices', component:ListservicesComponent},
  {path:'gestiondirections', component : ListdirectionComponent},
- {path: '', component:AcceuilcnstnComponent}
+ {path:'gestionsalles', component : ListesalleComponent },
+ {path:'gestioncategorie',component:ListecategorieComponent},
+ {path:'gestionequipement',component :ListequipemetComponent},
+ {path:'gestionreservation',component:ListereservationComponent},
+ {path:'login',component:LoginComponent},
+ {path:'register',component:RegisterComponent},
+ {path: '', component:AcceuilcnstnComponent},
+ 
+
 ];
 
 @NgModule({

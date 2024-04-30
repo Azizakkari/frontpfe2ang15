@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -23,6 +24,17 @@ import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { Forms2Component } from './forms2/forms2.component';
+import { ListesalleComponent } from './listesalle/listesalle.component';
+import { ListequipemetComponent } from './listequipemet/listequipemet.component';
+import { ListecategorieComponent } from './listecategorie/listecategorie.component';
+import { ListereservationComponent } from './listereservation/listereservation.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { MatNativeDateModule, MatPseudoCheckboxModule } from '@angular/material/core';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,14 +50,20 @@ import { Forms2Component } from './forms2/forms2.component';
     ListservicesComponent,
     ListdirectionComponent,
     Forms2Component,
+    ListesalleComponent,
+    ListequipemetComponent,
+    ListecategorieComponent,
+    ListereservationComponent,
+    LoginComponent,
+    RegisterComponent,
     
   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterLink,RouterLinkActive,RouterOutlet,FormsModule,ReactiveFormsModule,HttpClientModule, MatListModule, MatDividerModule, MatButtonModule, MatToolbarModule
-  ],
+    RouterLink,RouterLinkActive,RouterOutlet,FormsModule,ReactiveFormsModule,HttpClientModule, MatListModule, MatDividerModule, MatButtonModule, MatToolbarModule , MatCardModule,
+    MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,],
   providers: [],
   bootstrap: [AppComponent]
 })

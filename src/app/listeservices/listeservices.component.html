@@ -23,28 +23,42 @@
             <div class="container" *ngIf="mybolean">
                 <h2>Nouveau service</h2>
 
-                <form (ngSubmit)="onSubmit()">
-                    <label for="name">Name:</label>
+
+            <form class="form-horizontal" action="/action_page.php">
+
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="nom">Nom:</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="nom" placeholder="entrez votre nom" name="nom"
                             [(ngModel)]="monservice.nom">
                     </div>
-                  
-                    <label for="price">Description:</label>
+                </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-2" for="description">Description:</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control" id="description"
                             placeholder="entrez votre description" name="description"
                             [(ngModel)]="monservice.description">
                     </div>
-                  
-                    <label for="category">Direction:</label>
+                </div>
+                    <div class="form-group">
+                        <label for="cat-select" class="control-label col-sm-2" >Direction:</label>
+                   
                     <select id="direction" [(ngModel)]="monservice.direction" name="category" required>
                       <option *ngFor="let d of mesdirections" [ngValue]="d">{{ d.nom }}</option>
                     </select>
-                  
-                    <button type="submit">Add service</button>
-                  </form>
-            </div>
+                </div>
+            
+               
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-primary" (click)=" onSubmit()">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+
             <div *ngIf="!mybolean">
                 
             <table class="table table-bordered ">
@@ -65,12 +79,58 @@
                         <td>{{monservice.description}}</td>
                         <td>{{monservice.direction?.nom}}</td>
                         <td> <button mat-raised-button color="warn" (click)="deletservicebyid(monservice.id)">Suppression</button></td>
-                        <button mat-raised-button color="primary">Mettre à jour</button>
+                        <button mat-raised-button color="primary"  (click)="serviceDetails(monservice.id)">Mettre à jour</button>
                     </tr>
                     
             </table>
+            <div class="panel panel-success" *ngIf="mybolean2">
+                <div class="panel-heading text-center"><h3>Modification</h3></div>
+                <div class="panel-body">
+            <div class="container" >
+                <h2>Modification</h2>
             </div>
+            <mat-list>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+                <mat-divider></mat-divider>
+              </mat-list>
+             
+            <form (ngSubmit)="Update()"  #form="ngForm">
+                <div>
+                    
+                  <label><b>Nom: </b></label>
+                  <input type="text" class="form-control" id="nom" placeholder="entrez votre nom" name="nom"
+                    [(ngModel)]="monservice.nom">
+                </div>
+                <div>
+                  <label><b>Description </b></label>
+                  <input type="text" class="form-control" id="prenom" placeholder="entrez votre description" name="Description"
+                    [(ngModel)]="monservice.description">
+                </div>
+                <div class="form-group">
+                    <label for="cat-select" class="control-label col-sm-2" >Direction:</label>
+               
+                <select id="direction" [(ngModel)]="monservice.direction" name="category" required>
+                  <option *ngFor="let d of mesdirections" [ngValue]="d">{{ d.nom }}</option>
+                </select>
+            </div>
+                
+                <mat-list>
+                    <mat-divider></mat-divider>
+                   
+                  </mat-list>
+                <button type="submit" mat-raised-button color="primary" >Mettre à jour</button>
+                <mat-list>
+                    <mat-divider></mat-divider>
+                    <button type="submit" mat-raised-button color="warn" (click)="evaluatebolean2()" >Annuler</button>
+                  </mat-list>
+          
+              </form>
+                 </div>
+                </div>
             
+    
         </div>
-    </div>
+      </div>
+    
 </div>

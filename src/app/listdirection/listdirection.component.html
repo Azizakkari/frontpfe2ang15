@@ -58,21 +58,68 @@
                     <th>id</th>
                     <th>nom</th>
                     <th>description</th>
+                    <th>service</th>
                     <th>Suppression</th>
                     <th> Mise à jour</th>
                 </thead>
                 <tbody>
-                    <tr *ngFor="let mondirec of  mesdirections">
+                    <tr *ngFor="let mondirection of  mesdirections">
 
-                        <td>{{mondirec.id}}</td>
-                        <td>{{mondirec.nom}}</td>
-                        <td>{{mondirec.description}}</td>
-
-                        <td><button class="button btn-danger" (click)="deletdirecbyid(mondirec.id)">Suppression</button></td>
-                        <td><button class="button btn-success" (click)="updatedirec(mondirec.id)"> Mise à jour</button></td> 
+                        <td>{{mondirection.id}}</td>
+                        <td>{{mondirection.nom}}</td>
+                        <td>{{mondirection.description}}</td>
+                        <td>{{mondirection.service}}</td>
+                       
+                        <td> <button mat-raised-button color="warn" (click)="deletdirecbyid(mondirection.id)">Suppression</button></td>
+                        <td><button mat-raised-button color="primary"  (click)="directionDetails(mondirection.id)">Mettre à jour</button></td>
+                        <!-- <td><button class="button btn-danger" (click)="deletdirecbyid(mondirec.id)">Suppression</button></td>
+                        <td><button class="button btn-success" (click)="directionDetails(mondirec.id)"> Mise à jour</button></td>  -->
                     </tr>
-                </tbody>
-            </table>
-        </div>
+                </table>
+                <div class="panel panel-success" *ngIf="mybolean2">
+                    <div class="panel-heading text-center"><h3>Modification</h3></div>
+                    <div class="panel-body">
+                <div class="container" >
+                    <h2>Modification</h2>
+                </div>
+                <mat-list>
+                    <mat-divider></mat-divider>
+                    <mat-divider></mat-divider>
+                    <mat-divider></mat-divider>
+                  </mat-list>
+                 
+                <form (ngSubmit)="Update()"  #form="ngForm">
+                    <div>
+                        
+                      <label><b>Nom: </b></label>
+                      <input type="text" class="form-control" id="nom" placeholder="entrez votre nom" name="nom"
+                        [(ngModel)]="mondirection.nom">
+                    </div>
+                    <div>
+                      <label><b>Description </b></label>
+                      <input type="text" class="form-control" id="prenom" placeholder="entrez votre description" name="Description"
+                        [(ngModel)]="mondirection.description">
+                    </div>
+          
+                   
+               
+                    
+                    <mat-list>
+                        <mat-divider></mat-divider>
+                       
+                      </mat-list>
+                    <button type="submit" mat-raised-button color="primary" >Mettre à jour</button>
+                    <mat-list>
+                        <mat-divider></mat-divider>
+                        <button type="submit" mat-raised-button color="warn" (click)="evaluatebolean2()" >Annuler</button>
+                      </mat-list>
+              
+                  </form>
+                     </div>
+                    </div>
+                
+        
+            </div>
+          </div>
+        
     </div>
-</div>
