@@ -1,29 +1,39 @@
 <mat-toolbar>
-    <span>Registration</span>
-  </mat-toolbar>
-  <mat-card class="my-card">
-<mat-card-content>
-    <form class="my-form">
+   <span>Inscription</span>
+ </mat-toolbar>
+ 
+ <mat-card class="my-card">
+   <mat-card-content>
+     <form class="my-form">
        <mat-form-field class="full-width">
-              <mat-label>First Name</mat-label>
-              <input  matInput  placeholder="First name"  name="fname"  required>
-           </mat-form-field>
-           <mat-form-field class="full-width">
-              <mat-label>Last Name</mat-label>
-              <input  matInput  placeholder="Last Name" name="lname"  required>
-           </mat-form-field>
-           <mat-form-field class="full-width">
-              <mat-label>Address</mat-label>
-              <input  matInput  placeholder="Address" name="address"  required>
-           </mat-form-field>
-           <mat-form-field class="full-width">
-              <mat-label>Email</mat-label>
-              <input  matInput  placeholder="Email" name="email">
-           </mat-form-field>
-           <mat-form-field class="full-width">
-              <mat-label>Password</mat-label>
-              <input  matInput  placeholder="Password"  name="password">
-           </mat-form-field>
-    </form>
-  </mat-card-content>
-  </mat-card>
+         <mat-label>Prénom <span class="required">*</span></mat-label>
+         <input matInput placeholder="Entrez votre prénom" name="fname" required>
+       </mat-form-field>
+ 
+       <mat-form-field class="full-width">
+         <mat-label>Nom de famille <span class="required">*</span></mat-label>
+         <input matInput placeholder="Entrez votre nom de famille" name="lname" required>
+       </mat-form-field>
+ 
+       <mat-form-field class="full-width">
+         <mat-label>Adresse <span class="required">*</span></mat-label>
+         <input matInput placeholder="Entrez votre adresse" name="address" required>
+       </mat-form-field>
+ 
+       <mat-form-field class="full-width">
+         <mat-label>Email</mat-label>
+         <input matInput placeholder="Entrez votre email" name="email" type="email">
+         <mat-error *ngIf="this.email">Veuillez entrer une adresse email valide</mat-error>
+       </mat-form-field>
+ 
+       <mat-form-field class="full-width">
+         <mat-label>Mot de passe <span class="required">*</span></mat-label>
+         <input matInput placeholder="Entrez un mot de passe" name="password" type="password" required>
+         <mat-hint [align]="'end'">Le mot de passe doit comporter au moins 8 caractères</mat-hint>
+       </mat-form-field>
+ 
+       <button mat-raised-button color="primary" type="submit">S'inscrire</button>
+     </form>
+   </mat-card-content>
+ </mat-card>
+ 

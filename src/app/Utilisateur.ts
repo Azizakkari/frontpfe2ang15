@@ -1,3 +1,7 @@
+import { Leservice } from "./Leservice";
+import { Equipement } from "./equipement";
+import { Reservation } from "./reservation";
+
 export class Utilisateur{
 
     id?: number;
@@ -9,4 +13,7 @@ export class Utilisateur{
 	email?: String;
 	adresse?: String;
 	telephone?: number;
-}
+	leservice?: Leservice;
+    equipement?: Equipement;
+reservation?: Reservation;
+}  

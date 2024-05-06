@@ -11,6 +11,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class ListservicesComponent {
   monservice: Leservice = {
+    id: 0,
     nom: '',
     description: '',
     direction: {

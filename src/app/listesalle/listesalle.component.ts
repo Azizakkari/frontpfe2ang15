@@ -9,8 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./listesalle.component.css']
 })
 export class ListesalleComponent {
+  salleupdate: Salle = { id: 0, nom: '', nombre_de_salle: 0 };
+
   monsal: Salle=new Salle();
   mybolean: boolean=false;
+  mybolean2: boolean=false;
   messalle?: Salle[];
   newsalle: Salle=new  Salle();
   constructor(private messalles: SalleService, private router: Router){}
@@ -42,8 +45,7 @@ export class ListesalleComponent {
   }
 
 
-  updatesalle(id?:number){
-  }
+
 
   adduser() {
     console.log(this.newsalle);
@@ -59,9 +61,32 @@ export class ListesalleComponent {
       }
     );
   }
+  
 
+  salleDetails(id?: number){
+    this.mybolean2=true;
+    this.messalles.getsallebyid(id).subscribe((data: any) => {
+      console.log(data);
+      this.salleupdate=data;
+      
+    });
+  
+  }
+  Update() {
+    console.log(this.salleupdate);
+    if (this.salleupdate?.id) { // check if id has a value
+      this.messalles.updatesalle(this.salleupdate.id, this.salleupdate).subscribe(() => {
+        this.mybolean2 = !this.mybolean2;
+        alert("Votre mise a jour a été effectuée avec succées")
+        this.ngOnInit();
+      });
+    }
+  }
   evaluatebolean(){
     this.mybolean=!this.mybolean;
   }
-
+  evaluatebolean2(){
+    
+    this.mybolean2 = !this.mybolean2;
+  }
 }

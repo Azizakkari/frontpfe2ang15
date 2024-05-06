@@ -35,5 +35,15 @@ export class ReservationService {
       console.log('Thing was not saved to the database.');
     }
   }
-
+  getreservationbyid(id?: number){
+    const url='http://localhost:8080/reservation/'
+    return this.httpClient.get( url+id);
+  }
+  updatereservation(id:number , reservation : Reservation): Observable<Reservation>{
+    const url='http://localhost:8080/reservation/majres/'
+    console.log("service updatedirection contacté  ");
+  
+    return this.httpClient.put<Reservation>(url+id, reservation);
+  
+  }
 }

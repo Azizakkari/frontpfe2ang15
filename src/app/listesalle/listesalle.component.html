@@ -84,16 +84,55 @@
                         
         
                         <td> <button mat-raised-button color="warn"  (click)="deletsallebyid(monsal.id)">Suppression</button></td>
-                        <td><button mat-raised-button color="primary"  (click)="updatesalle(monsal.id)"> Mise à jour</button></td>
+                        <td><button mat-raised-button color="primary"  (click)="salleDetails(monsal.id)"> Mise à jour</button></td>
                     </tr>
             </table>
-        
-        </div>
-      </div>
+            <div class="panel panel-success" *ngIf="mybolean2">
+              <div class="panel-heading text-center"><h3>Modification</h3></div>
+              <div class="panel-body">
+          <div class="container" >
+              <h2>Modification</h2>
+          </div>
+          <mat-list>
+              <mat-divider></mat-divider>
+              <mat-divider></mat-divider>
+              <mat-divider></mat-divider>
+            </mat-list>
+           
+          <form (ngSubmit)="Update()"  #form="ngForm">
+              <div>
+                  
+                <label><b>Nom: </b></label>
+                <input type="text" class="form-control" id="nom" placeholder="entrez votre nom" name="nom"
+                  [(ngModel)]="salleupdate.nom">
+              </div>
+              <div>
+                <label><b>Nombre de salle: </b></label>
+                <input type="number" class="form-control" id="nombre de salle" placeholder="entrez votre nombre de salle" name="Nombre de salle"
+                  [(ngModel)]="salleupdate.nombre_de_salle">
+              </div>
     
-      
-
-  </div>
- 
+             
+         
+              
+              <mat-list>
+                  <mat-divider></mat-divider>
+                 
+                </mat-list>
+              <button type="submit" mat-raised-button color="primary" >Mettre à jour</button>
+              <mat-list>
+                  <mat-divider></mat-divider>
+                  <button type="submit" mat-raised-button color="warn" (click)="evaluatebolean2()" >Annuler</button>
+                </mat-list>
+        
+            </form>
+               </div>
+              </div>
+          
+  
+      </div>
+    </div>
+  
+</div>
 
 

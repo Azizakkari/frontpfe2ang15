@@ -1,11 +1,12 @@
- <div *ngFor="let p of mesproc">
-    <div class="panel panel-info">
+
       <div class="form-outline mb-4">
         <input type="search" class="form-control" id="datatable-search-input" placeholder="Search   ..." [(ngModel)]="filter">
         
       </div>
       <div id="datatable">
       </div>
+       <div *ngFor="let p of mesproc">
+    <div class="panel panel-info">
       <div class="panel-heading">{{ p.nom }}</div>
     
       <div class="panel-body">

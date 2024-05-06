@@ -33,6 +33,7 @@ import { MatInputModule } from '@angular/material/input';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MatNativeDateModule, MatPseudoCheckboxModule } from '@angular/material/core';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -63,7 +64,8 @@ import { MatNativeDateModule, MatPseudoCheckboxModule } from '@angular/material/
     BrowserModule,
     AppRoutingModule,
     RouterLink,RouterLinkActive,RouterOutlet,FormsModule,ReactiveFormsModule,HttpClientModule, MatListModule, MatDividerModule, MatButtonModule, MatToolbarModule , MatCardModule,
-    MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,],
+    MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,  CommonModule,
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

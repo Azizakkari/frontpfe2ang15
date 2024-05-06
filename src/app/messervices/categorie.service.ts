@@ -41,5 +41,15 @@ export class CategorieService {
 
 
   }
-
+  getcategoriebyid(id?: number){
+    const url='http://localhost:8080/categorie/'
+    return this.httpClient.get( url+id);
+  }
+  updatecategorie(id:number , categorie : Categorie): Observable<Categorie>{
+    const url='http://localhost:8080/categorie/majcat/'
+    console.log("service updatecategorie contacté  ");
+  
+    return this.httpClient.put<Categorie>(url+id, categorie);
+  
+  }
 }

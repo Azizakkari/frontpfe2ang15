@@ -76,7 +76,7 @@ export class MesusersService {
   }
   updatedirection(id:number , direction : Direction): Observable<Direction>{
     const url='http://localhost:8080/directions/majdirec/'
-    console.log("service updatedirection contacté  ");
+    console.log(direction);
   
     return this.httpClient.put<Direction>(url+id, direction);
   
@@ -85,5 +85,7 @@ export class MesusersService {
   getId(getId?: number) {
     this.id = getId;
   }
+
+  
   
 }

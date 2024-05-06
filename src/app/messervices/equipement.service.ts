@@ -36,5 +36,15 @@ export class EquipementService {
       console.log('Thing was not saved to the database.');
     }
   }
-
+  getequipementbyid(id?: number){
+    const url='http://localhost:8080/equipement/'
+    return this.httpClient.get( url+id);
+  }
+  updateequipement(id:number , Equipement : Equipement): Observable<Equipement>{
+    const url='http://localhost:8080/equipement/majequip/'
+    console.log("service updateequipement contacté  ");
+  
+    return this.httpClient.put<Equipement>(url+id, Equipement);
+  
+  }
 }

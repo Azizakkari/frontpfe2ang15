@@ -9,6 +9,11 @@ import { Router } from '@angular/router';
   styleUrls: ['./listereservation.component.css']
 })
 export class ListereservationComponent {
+
+  reservationupdate: Reservation = { id: 0, typemeeting: '', date_du_resrvation:undefined ,date_fin:undefined };
+
+  mybolean2: boolean=false;
+
   monreserv: Reservation=new Reservation();
   mybolean: boolean=false;
   mesreservation?: Reservation[];
@@ -38,8 +43,7 @@ export class ListereservationComponent {
     }
 
   
-  updateRes(id?:number){
-  }
+ 
 
   addRes() {
     console.log(this.newres);
@@ -60,5 +64,28 @@ export class ListereservationComponent {
 
   evaluatebolean(){
     this.mybolean=!this.mybolean;
+  }
+  reservationDetails(id?: number){
+    this.mybolean2=true;
+    this.mesusers.getreservationbyid(id).subscribe((data: any) => {
+      console.log(data);
+      this.reservationupdate=data;
+      
+    });
+  
+  }
+  Update() {
+    console.log(this.reservationupdate);
+    if (this.reservationupdate?.id) { // check if id has a value
+      this.mesusers.updatereservation(this.reservationupdate.id, this.reservationupdate).subscribe(() => {
+        this.mybolean2 = !this.mybolean2;
+        alert("Votre mise a jour a été effectuée avec succées")
+        this.ngOnInit();
+      });
+    }
+  }
+  evaluatebolean2(){
+    
+    this.mybolean2 = !this.mybolean2;
   }
 }

@@ -9,8 +9,10 @@ import { Router } from '@angular/router';
   styleUrls: ['./listequipemet.component.css']
 })
 export class ListequipemetComponent {
+  equipementupdate: Equipement = { id: 0, date_acquisition: undefined, configuration: "", etat: "", reservable: false };
   equip: Equipement=new Equipement();
   mybolean: boolean=false;
+  mybolean2: boolean=false
   equipement?: Equipement[];
   newequipe: Equipement=new  Equipement();
   constructor(private mesusers: EquipementService, private router: Router){}
@@ -37,8 +39,7 @@ export class ListequipemetComponent {
     }
 
   
-  updateUser(id?:number){
-  }
+  
 
   addequipe() {
     console.log(this.newequipe);
@@ -57,8 +58,32 @@ export class ListequipemetComponent {
       }
     );
   }
+  equipDetails(id?: number){
+    this.mybolean2=true;
+    this.mesusers.getequipementbyid(id).subscribe((data: any) => {
+      console.log(data);
+      this.equipementupdate=data;
+      
+    });
+  
+  }
+  Update() {
+    console.log(this.equipementupdate);
+    if (this.equipementupdate?.id) { // check if id has a value
+      this.mesusers.updateequipement(this.equipementupdate.id, this.equipementupdate).subscribe(() => {
+        this.mybolean2 = !this.mybolean2;
+        alert("Votre mise a jour a été effectuée avec succées")
+        this.ngOnInit();
+      });
+    }
+  }
+
 
   evaluatebolean(){
     this.mybolean=!this.mybolean;
+  }
+  evaluatebolean2(){
+    
+    this.mybolean2 = !this.mybolean2;
   }
 }

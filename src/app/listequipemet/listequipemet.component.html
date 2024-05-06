@@ -98,20 +98,65 @@
                         
                  
                         <td> <button mat-raised-button color="warn"  (click)="deletequipementbyid(equip.id)">Suppression</button></td>
-                        <td><button mat-raised-button color="primary"  (click)="updateUser(equip.id)"> Mise à jour</button></td>
+                        <td><button mat-raised-button color="primary"  (click)="equipDetails(equip.id)"> Mise à jour</button></td>
                     </tr>
-                
-                
-        
-        
-              
-            </table>
-       
-        </div>
-      </div>
-    
+                  </table>
+                  <div class="panel panel-success" *ngIf="mybolean2">
+                    <div class="panel-heading text-center"><h3>Modification</h3></div>
+                    <div class="panel-body">
+                <div class="container" >
+                    <h2>Modification</h2>
+                </div>
+                <mat-list>
+                    <mat-divider></mat-divider>
+                    <mat-divider></mat-divider>
+                    <mat-divider></mat-divider>
+                  </mat-list>
+                 
+                <form (ngSubmit)="Update()"  #form="ngForm">
+                    <div>
+                        
+                      <label><b>Date acquisition: </b></label>
+                      <input type="date" class="form-control" id="Date acquisition" placeholder="entrez votre date acquisition" name="Date acquisition"
+                        [(ngModel)]="equipementupdate.date_acquisition">
+                    </div>
+                    <div>
+                      <label><b>Configuration: </b></label>
+                      <input type="text" class="form-control" id="nombre de Configuration" placeholder="entrez votre configuration" name="Nombre de Configuration"
+                        [(ngModel)]="equipementupdate.configuration">
+                    </div>
+                    <div>
+                    <label><b>Etat: </b></label>
+                    <input type="text" class="form-control" id="Etat" placeholder="entrez votre etat" name="Etat"
+                      [(ngModel)]="equipementupdate.etat">
+                   </div>
+                   <div>
+                  <label><b>Reservable: </b></label>
+                  <input type="checkbox" class="form-control" id="reservable" placeholder="entrez votre reservable" name="Reservable"
+                    [(ngModel)]="equipementupdate.reservable">
+                </div>
       
-
-  </div>
+                   
+               
+                    
+                    <mat-list>
+                        <mat-divider></mat-divider>
+                       
+                      </mat-list>
+                    <button type="submit" mat-raised-button color="primary" >Mettre à jour</button>
+                    <mat-list>
+                        <mat-divider></mat-divider>
+                        <button type="submit" mat-raised-button color="warn" (click)="evaluatebolean2()" >Annuler</button>
+                      </mat-list>
+              
+                  </form>
+                     </div>
+                    </div>
+                
+        
+            </div>
+          </div>
+        
+      </div>
  
 

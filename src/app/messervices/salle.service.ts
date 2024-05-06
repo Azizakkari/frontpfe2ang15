@@ -35,4 +35,15 @@ export class SalleService {
       console.log('Thing was not saved to the database.');
     }
   }
+  getsallebyid(id?: number){
+    const url='http://localhost:8080/salles/'
+    return this.httpClient.get( url+id);
+  }
+  updatesalle(id:number , Salle : Salle): Observable<Salle>{
+    const url='http://localhost:8080/salles/majsalle/'
+    console.log("service updatedirection contacté  ");
+  
+    return this.httpClient.put<Salle>(url+id, Salle);
+  
+  }
 }

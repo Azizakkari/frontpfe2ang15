@@ -1,25 +1,31 @@
+<div class="container-fluid">
+   <div class="panel panel-primary">
+       <div class="panel-heading text-center">
+           <h2>CONNEXION </h2>
+       </div>
+       <div class="panel-body">
+   
 
-    <mat-toolbar>
-        <span class="centered-span">LOGIN</span>
-      </mat-toolbar>
-      <div class="container">
-      <mat-card class="my-card">
-         <mat-card-content>
-            <form class="my-form">
-               <mat-form-field class="full-width">
-                  <mat-label>Email</mat-label>
-                  <input  matInput  placeholder="Email" name="email">
-               </mat-form-field>
-               <mat-form-field class="full-width">
-                  <mat-label>Password</mat-label>
-                  <input  matInput  placeholder="Password" name="password">
-               </mat-form-field>
-            </form>
-         </mat-card-content>
-         <mat-card-actions>
-            <button mat-raised-button  color="primary">LOGIN</button>
-         </mat-card-actions>
-      </mat-card>
-    </div>
+<form action="/action_page.php" method="post">
+  <div class="imgcontainer">
+    <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
+  </div>
 
+  <div class="container">
+    <label for="uname"><b>Email</b></label>
+    <input type="text" placeholder="Entrer votre adresse email" name="uname" required>
 
+    <label for="psw"><b>Mot de passe</b></label>
+    <input type="password" placeholder="Entrer le mot de passe" name="psw" required>
+        
+    <button type="submit">Connexion</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
+    </label>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+    <button type="button" class="cancelbtn">Annuler</button>
+    <span class="psw">Mot de passe <a href="#">oublié?</a></span>
+  </div>
+</form>
