@@ -18,7 +18,7 @@ import { ListdirectionComponent } from './listdirection/listdirection.component'
 import { FooterComponent } from './footer/footer.component';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { MatListModule } from '@angular/material/list';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
@@ -34,6 +34,9 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MatNativeDateModule, MatPseudoCheckboxModule } from '@angular/material/core';
 import { CommonModule } from '@angular/common';
+import { AdmintemplateComponent } from './admintemplate/admintemplate.component';
+import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
+import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
 
 
 @NgModule({
@@ -57,6 +60,8 @@ import { CommonModule } from '@angular/common';
     ListereservationComponent,
     LoginComponent,
     RegisterComponent,
+    AdmintemplateComponent,
+    NotauthorizedComponent,
     
   
   ],
@@ -66,7 +71,10 @@ import { CommonModule } from '@angular/common';
     RouterLink,RouterLinkActive,RouterOutlet,FormsModule,ReactiveFormsModule,HttpClientModule, MatListModule, MatDividerModule, MatButtonModule, MatToolbarModule , MatCardModule,
     MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,  CommonModule,
     ],
-  providers: [],
+  providers: [{
+ provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true
+
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,13 +7,13 @@
                 <mat-divider></mat-divider>
                 <mat-divider></mat-divider>
                 <mat-divider></mat-divider>
-                <mat-list-item><h2>Liste des equipements</h2></mat-list-item>
+                <mat-list-item><h2>Liste des équipements</h2></mat-list-item>
                 
                 <mat-divider></mat-divider>
                 <mat-divider></mat-divider>
                 <mat-divider></mat-divider>
                
-                <td> <button mat-raised-button color="success" (click)="evaluatebolean()"><b>Ajouter un equipement</b></button></td>
+                <td> <button mat-raised-button color="success" (click)="evaluatebolean()"><b>Ajouter un équipement</b></button></td>
              
                 <mat-divider></mat-divider>
                 <mat-divider></mat-divider>
@@ -21,7 +21,7 @@
               </mat-list>
         
           <div class="container" *ngIf="mybolean">
-            <h2>Nouveau equipement</h2>
+            <h2>Nouveau équipement</h2>
             <form class="form-horizontal" action="/action_page.php">
               
               <div class="form-group">
@@ -131,11 +131,12 @@
                       [(ngModel)]="equipementupdate.etat">
                    </div>
                    <div>
+                    <div class="form-check mt-5 mb-3 ms-2 pb-1">
                   <label><b>Reservable: </b></label>
-                  <input type="checkbox" class="form-control" id="reservable" placeholder="entrez votre reservable" name="Reservable"
+                  <input type="checkbox" class="form-check-label" id="reservable" placeholder="entrez votre reservable" name="Reservable"
                     [(ngModel)]="equipementupdate.reservable">
                 </div>
-      
+              </div>
                    
                
                     

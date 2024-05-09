@@ -86,4 +86,5 @@ export class ListequipemetComponent {
     
     this.mybolean2 = !this.mybolean2;
   }
+  
 }

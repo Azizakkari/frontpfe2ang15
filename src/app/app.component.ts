@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import  jsondataproc from '../data/procedures.json'
+
 import { MesusersService } from './mesusers.service';
 
 
@@ -18,7 +18,7 @@ export class AppComponent {
   }
   title = 'intranetcnstn';
 
-  mesproc:any[]=jsondataproc.procedures;
+ 
   
   
  

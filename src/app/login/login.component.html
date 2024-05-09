@@ -1,31 +1,20 @@
 <div class="container-fluid">
-   <div class="panel panel-primary">
+   <div class="panel panel-success">
        <div class="panel-heading text-center">
-           <h2>CONNEXION </h2>
+           Authentification
        </div>
        <div class="panel-body">
-   
-
-<form action="/action_page.php" method="post">
-  <div class="imgcontainer">
-    <img src="assets/images/img_avatar2.png" alt="Avatar" class="avatar">
-  </div>
-
-  <div class="container">
-    <label for="uname"><b>Email</b></label>
-    <input type="text" placeholder="Entrer votre adresse email" name="uname" required>
-
-    <label for="psw"><b>Mot de passe</b></label>
-    <input type="password" placeholder="Entrer le mot de passe" name="psw" required>
-        
-    <button type="submit">Connexion</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
-    </label>
-  </div>
-
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Annuler</button>
-    <span class="psw">Mot de passe <a href="#">oublié?</a></span>
-  </div>
-</form>
+<form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
+   <div class="form-group">
+     <label for="email">Username:</label>
+     <input type="text" class="form-control" id="email" formControlName="username">
+   </div>
+   <div class="form-group">
+     <label for="pwd">Password:</label>
+     <input type="password" class="form-control" id="pwd" formControlName="password">
+   </div>
+   <button type="submit" class="btn btn-default">Submit</button>
+ </form>
+       </div>
+       </div>
+       </div>
