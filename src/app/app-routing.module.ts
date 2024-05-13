@@ -26,17 +26,22 @@ const routes: Routes = [
   { path: '', redirectTo: "login", pathMatch: "full" },
   {
     path: 'admin', component: AdmintemplateComponent,canActivate: [AuthenticationGuard],
+    
  
      children: [
-      { path: 'acceuil', component: AcceuilcnstnComponent },
+   
       { path: 'presentation', component: PresentationComponent },
       { path: 'mesforms', component: Forms2Component },
-      { path: 'contact', component: ContactComponent },
-      { path: 'gallerie', component: GallerieComponent },
-      { path: 'acceuilcnstn', component: AcceuilcnstnComponent },
+      { path: 'contact', component: ContactComponent},
+      { path: 'gallerie', component: GallerieComponent},
+      {path:"acceuil", component:AcceuilcnstnComponent},
+      { path: '', component: AcceuilcnstnComponent },
+      
+       // Redirection vers acceuilcnstn
+     
     
       { path: 'gestionusers', component: GestionuserComponent ,canActivate :[AuthorizationGuard], data :{role:"ADMIN"} },
-      { path: 'lienutile', component: LienutileComponent },
+      { path: 'lienutile', component: LienutileComponent},
       { path: 'gestionservices', component: ListservicesComponent ,canActivate :[AuthorizationGuard], data :{role:"ADMIN"} },
       { path: 'gestiondirections', component: ListdirectionComponent,canActivate :[AuthorizationGuard], data :{role:"ADMIN"}  },
       { path: 'gestionsalles', component: ListesalleComponent,canActivate :[AuthorizationGuard], data :{role:"ADMIN"}  },

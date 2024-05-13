@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 
 import { MesusersService } from './mesusers.service';
+import { AuthService } from './messervices/auth.service';
 
 
 
@@ -11,14 +12,17 @@ import { MesusersService } from './mesusers.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   
-  constructor(private mesusersserv: MesusersService){
+  constructor(private authserv: AuthService){
 
   }
   title = 'intranetcnstn';
 
- 
+  ngOnInit(): void {
+    this.authserv.loadUserfromLocalStorage();
+
+  }
   
   
  

@@ -1,28 +1,17 @@
-import { Component } from '@angular/core';
-import  jsondataproc from '../../data/procedures.json'
-import { MesusersService } from '../mesusers.service';
+import { Component, OnInit } from '@angular/core';
+import jsondata from '../../data/procedures.json';
 
 @Component({
   selector: 'app-forms2',
   templateUrl: './forms2.component.html',
   styleUrls: ['./forms2.component.css']
 })
-export class Forms2Component {
- 
-  mesproc:any[]=jsondataproc.procedures;
-  constructor(private mesusers:MesusersService) { }
+export class Forms2Component implements OnInit {
+  procedures: any[] = jsondata.procedures;
 
-  little='angular-bootstrap-scaffolding';
-filter: String  = '' ;
-  
+  constructor() { }
 
-
-
-
-  ngOnInit(): void { 
-   
+  ngOnInit(): void {
+    console.log('Données des procédures:', this.procedures);
   }
- 
-  
-  
 }

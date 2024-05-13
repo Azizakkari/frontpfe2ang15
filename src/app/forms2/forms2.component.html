@@ -1,39 +1,26 @@
-
-      <div class="form-outline mb-4">
-        <input type="search" class="form-control" id="datatable-search-input" placeholder="Search   ..." [(ngModel)]="filter">
-        
-      </div>
-      <div id="datatable">
-      </div>
-       <div *ngFor="let p of mesproc">
-    <div class="panel panel-info">
-      <div class="panel-heading">{{ p.nom }}</div>
-    
-      <div class="panel-body">
-        
-        <table class="table table-condensed">
-          
-          <thead>
-            <tr>
-              <th>ID</th>
-              <th>Name</th>
-              <th>code</th>
-              <th>revision</th>
-              <th>date d'application</th>
-            </tr>
-          </thead>
-           <tbody>
-            <tr *ngFor="let t of p.formulaires">
-              <td>{{ t.id }}</td>
-              <td>{{ t.nomforms }}</td>
-              <td>{{ t.code }}</td>
-              <td>{{ t.revision }}</td>
-              <td>{{t.date_d_application}}</td>          
-            </tr>
-            
-          </tbody> 
-        </table> 
-      </div>
-    </div>
-  </div> 
-  
+<table>
+  <thead>
+    <tr>
+      <th>Procedure</th>
+      <th>Num</th>
+      <th>Nom du formulaire</th>
+      <th>code</th>
+      <th>revision</th>
+      <th>date d'application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <ng-container *ngFor="let procedure of procedures; let i = index">
+      <tr *ngFor="let formulaire of procedure.formulaires; let j = index">
+        <ng-container *ngIf="j === 0">
+          <td [attr.rowspan]="procedure.formulaires.length">{{ procedure.nom }}</td>
+        </ng-container>
+        <td>{{ formulaire.id }}</td>
+        <td>{{ formulaire.nomforms }}</td>
+        <td>{{ formulaire.code }}</td>
+        <td>{{ formulaire.revision }}</td>
+        <td>{{ formulaire.date_d_application }}</td>
+      </tr>
+    </ng-container>
+  </tbody>
+</table>

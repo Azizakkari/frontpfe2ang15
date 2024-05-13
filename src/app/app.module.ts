@@ -37,10 +37,13 @@ import { CommonModule } from '@angular/common';
 import { AdmintemplateComponent } from './admintemplate/admintemplate.component';
 import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
 import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterPipe } from './filter.pipe';
 
 
 @NgModule({
   declarations: [
+
     AppComponent,
     Header2Component,
     FooterComponent,
@@ -62,6 +65,8 @@ import { NotauthorizedComponent } from './notauthorized/notauthorized.component'
     RegisterComponent,
     AdmintemplateComponent,
     NotauthorizedComponent,
+    FilterPipe
+    
     
   
   ],
@@ -69,7 +74,7 @@ import { NotauthorizedComponent } from './notauthorized/notauthorized.component'
     BrowserModule,
     AppRoutingModule,
     RouterLink,RouterLinkActive,RouterOutlet,FormsModule,ReactiveFormsModule,HttpClientModule, MatListModule, MatDividerModule, MatButtonModule, MatToolbarModule , MatCardModule,
-    MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,  CommonModule,
+    MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,  CommonModule, BrowserAnimationsModule,
     ],
   providers: [{
  provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true
