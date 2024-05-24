@@ -24,6 +24,7 @@ export class ListereservationComponent {
    
     this.mesusers.getAllreservation().subscribe(data=>{
       this.mesreservation = data;
+      console.log(this.mesreservation);
     }, err=>{
         console.log(err);
 

@@ -66,6 +66,8 @@
                   <th>typemeeting</th>
                   <th>date_du_résrvation</th>
                   <th>date_fin</th>
+                  <th>demandeur</th>
+                  <th>salle</th>
                 
                     
                  
@@ -87,6 +89,8 @@
                         <td>{{monreserv.typemeeting}}</td>
                         <td>{{monreserv.date_du_resrvation}}</td>
                         <td>{{monreserv.date_fin}}</td>
+                        <td>{{monreserv.utilisateur?.nom}}</td>
+                        <td>{{monreserv.salle?.nom}}</td>
                         
                       
                         <td><button  mat-raised-button color="warn" (click)="deletreservationbyid(monreserv.id)">Suppression</button></td>
@@ -97,7 +101,7 @@
                     <div class="panel-heading text-center"><h3>Modification</h3></div>
                     <div class="panel-body">
                 <div class="container" >
-                    <h2>Modification</h2>
+                 
                 </div>
                 <mat-list>
                     <mat-divider></mat-divider>

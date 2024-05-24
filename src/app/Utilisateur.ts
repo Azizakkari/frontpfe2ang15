@@ -13,6 +13,7 @@ export class Utilisateur{
 	email?: String;
 	adresse?: String;
 	telephone?: number;
+	password?: String;
 	leservice?: Leservice;
     equipement?: Equipement;
 reservation?: Reservation;

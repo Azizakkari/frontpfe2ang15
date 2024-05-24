@@ -4,7 +4,6 @@ import { MatCardModule } from '@angular/material/card';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { Header2Component } from './header2/header2.component';
 
 import { ContactComponent } from './contact/contact.component';
 import { PresentationComponent } from './presentation/presentation.component';
@@ -38,14 +37,17 @@ import { AdmintemplateComponent } from './admintemplate/admintemplate.component'
 import { AppHttpInterceptor } from './interceptors/app-http.interceptor';
 import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FilterPipe } from './filter.pipe';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { ActualiteComponent } from './actualite/actualite.component';
+import { ReserverSalleComponent } from './reserver-salle/reserver-salle.component';
+import { DemandeEquipementComponent } from './demande-equipement/demande-equipement.component';
+
 
 
 @NgModule({
   declarations: [
 
     AppComponent,
-    Header2Component,
     FooterComponent,
     ContactComponent,
     PresentationComponent,
@@ -65,7 +67,10 @@ import { FilterPipe } from './filter.pipe';
     RegisterComponent,
     AdmintemplateComponent,
     NotauthorizedComponent,
-    FilterPipe
+    ActualiteComponent,
+    ReserverSalleComponent,
+    DemandeEquipementComponent,
+
     
     
   
@@ -74,7 +79,15 @@ import { FilterPipe } from './filter.pipe';
     BrowserModule,
     AppRoutingModule,
     RouterLink,RouterLinkActive,RouterOutlet,FormsModule,ReactiveFormsModule,HttpClientModule, MatListModule, MatDividerModule, MatButtonModule, MatToolbarModule , MatCardModule,
-    MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,  CommonModule, BrowserAnimationsModule,
+    MatFormFieldModule,MatNativeDateModule,MatPseudoCheckboxModule, MatInputModule  ,  CommonModule, BrowserAnimationsModule,Ng2SearchPipeModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatListModule,
+    MatDividerModule,
+    MatNativeDateModule
     ],
   providers: [{
  provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true

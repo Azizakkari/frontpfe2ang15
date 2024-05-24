@@ -32,14 +32,10 @@ this.isAuthenticated=true;
 
   }
   logout(){
-    this.isAuthenticated=false;
-    this.accessToken=undefined;
-    this.username=undefined;
-    this.roles=undefined;
+    window.localStorage.setItem("accessToken",'');  
   }
   loadUserfromLocalStorage() {
     let token =window.localStorage.getItem("accessToken");
-    console.log(token);
     if(token){
      this.loadProfile({"access-token": token});
      this.router.navigateByUrl("/admin/acceuil");

@@ -1,20 +1,26 @@
-<div class="container-fluid">
-   <div class="panel panel-success">
-       <div class="panel-heading text-center">
-           Authentification
-       </div>
-       <div class="panel-body">
-<form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
-   <div class="form-group">
-     <label for="email">Username:</label>
-     <input type="text" class="form-control" id="email" formControlName="username">
-   </div>
-   <div class="form-group">
-     <label for="pwd">Password:</label>
-     <input type="password" class="form-control" id="pwd" formControlName="password">
-   </div>
-   <button type="submit" class="btn btn-default">Submit</button>
- </form>
-       </div>
-       </div>
-       </div>
+<div class="container-fluid login-container">
+  <mat-card class="login-panel">
+    <div class="logo-container">
+      <div class="logo-header">
+        <img src="../../assets/images/logo.svg" class="logo" alt="Logo de votre entreprise">
+        <mat-card-title class="login-header">Authentification</mat-card-title>
+      </div>
+    </div>
+    <mat-card-content>
+      <form [formGroup]="formLogin" (ngSubmit)="handleLogin()">
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Username</mat-label>
+          <input matInput type="text" formControlName="username">
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="full-width">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" formControlName="password">
+        </mat-form-field>
+        <button mat-raised-button color="primary" class="btn-block">Submit</button>
+      </form>
+      <div class="register-link text-center">
+        <button mat-raised-button color="accent" class="btn-block register-btn">Register</button>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>

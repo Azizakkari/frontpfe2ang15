@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { MesusersService } from './mesusers.service';
 import { AuthService } from './messervices/auth.service';
+import { Router } from '@angular/router';
 
 
 
@@ -14,13 +15,14 @@ import { AuthService } from './messervices/auth.service';
 })
 export class AppComponent implements OnInit{
   
-  constructor(private authserv: AuthService){
+  constructor(private authserv: AuthService, private router:Router){
 
   }
   title = 'intranetcnstn';
 
   ngOnInit(): void {
     this.authserv.loadUserfromLocalStorage();
+    
 
   }
   

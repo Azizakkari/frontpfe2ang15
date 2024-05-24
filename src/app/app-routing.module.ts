@@ -19,6 +19,9 @@ import { AdmintemplateComponent } from './admintemplate/admintemplate.component'
 import { AuthenticationGuard } from './guards/authentication.guard';
 import { AuthorizationGuard } from './guards/authorization.guard';
 import { NotauthorizedComponent } from './notauthorized/notauthorized.component';
+import { ActualiteComponent } from './actualite/actualite.component';
+import { DemandeEquipementComponent } from './demande-equipement/demande-equipement.component';
+import { ReserverSalleComponent } from './reserver-salle/reserver-salle.component';
 
 
 const routes: Routes = [
@@ -29,14 +32,14 @@ const routes: Routes = [
     
  
      children: [
-   
+      { path: 'actualite',component:ActualiteComponent},
       { path: 'presentation', component: PresentationComponent },
       { path: 'mesforms', component: Forms2Component },
       { path: 'contact', component: ContactComponent},
       { path: 'gallerie', component: GallerieComponent},
-      {path:"acceuil", component:AcceuilcnstnComponent},
-      { path: '', component: AcceuilcnstnComponent },
-      
+      { path: 'acceuil', component: AcceuilcnstnComponent},
+      { path: '', redirectTo: "acceuil", pathMatch: "full" },
+   
        // Redirection vers acceuilcnstn
      
     
@@ -44,10 +47,12 @@ const routes: Routes = [
       { path: 'lienutile', component: LienutileComponent},
       { path: 'gestionservices', component: ListservicesComponent ,canActivate :[AuthorizationGuard], data :{role:"ADMIN"} },
       { path: 'gestiondirections', component: ListdirectionComponent,canActivate :[AuthorizationGuard], data :{role:"ADMIN"}  },
-      { path: 'gestionsalles', component: ListesalleComponent,canActivate :[AuthorizationGuard], data :{role:"ADMIN"}  },
+      { path: 'gestionsalles', component: ListesalleComponent},
       { path: 'gestioncategorie', component: ListecategorieComponent,canActivate :[AuthorizationGuard], data :{role:"ADMIN"}  },
       { path: 'gestionequipement', component: ListequipemetComponent ,canActivate :[AuthorizationGuard], data :{role:"ADMIN"} },
-      { path: 'gestionreservation', component: ListereservationComponent,canActivate :[AuthorizationGuard], data :{role:"ADMIN"}  },
+      { path: 'gestionreservation', component: ListereservationComponent},
+      { path: 'demande-equipement',component :DemandeEquipementComponent},
+      { path: 'reserver-salle',component : ReserverSalleComponent},
       {path : 'notauthorized' , component :NotauthorizedComponent}
     ]
   },

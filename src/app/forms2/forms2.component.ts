@@ -8,10 +8,11 @@ import jsondata from '../../data/procedures.json';
 })
 export class Forms2Component implements OnInit {
   procedures: any[] = jsondata.procedures;
-
+  searchText: any; 
   constructor() { }
 
   ngOnInit(): void {
     console.log('Données des procédures:', this.procedures);
   }
+  
 }

@@ -33,9 +33,9 @@
                       </div>
                     </div>
                     <div class="form-group">
-                      <label class="control-label col-sm-2" for="nombre de salle">nombre de salle:</label>
+                      <label class="control-label col-sm-2" for="nombre des places">nombre des places:</label>
                       <div class="col-sm-10">
-                        <input type="text" class="form-control" id="nombre de salle" placeholder="entrez votre nombre de salle" name="nombre de salle"  [(ngModel)]="newsalle.nombre_de_salle">
+                        <input type="number" class="form-control" id="nombre des places" placeholder="entrez votre nombre de salle" name="nombre des places"  [(ngModel)]="newsalle.nombre_des_places">
                       </div>
                     </div>
                 
@@ -59,7 +59,7 @@
                 
                  <th >id</th>
                   <th>nom</th>
-                  <th>nombre de salle</th>
+                  <th>nombre des places</th>
             
                     
                  
@@ -80,7 +80,7 @@
                      
                         <td>{{monsal.id}}</td>
                         <td>{{monsal.nom}}</td>
-                        <td>{{monsal.nombre_de_salle}}</td>
+                        <td>{{monsal.nombre_des_places}}</td>
                         
         
                         <td> <button mat-raised-button color="warn"  (click)="deletsallebyid(monsal.id)">Suppression</button></td>
@@ -91,7 +91,7 @@
               <div class="panel-heading text-center"><h3>Modification</h3></div>
               <div class="panel-body">
           <div class="container" >
-              <h2>Modification</h2>
+             
           </div>
           <mat-list>
               <mat-divider></mat-divider>
@@ -109,7 +109,7 @@
               <div>
                 <label><b>Nombre de salle: </b></label>
                 <input type="number" class="form-control" id="nombre de salle" placeholder="entrez votre nombre de salle" name="Nombre de salle"
-                  [(ngModel)]="salleupdate.nombre_de_salle">
+                  [(ngModel)]="salleupdate.nombre_des_places">
               </div>
     
              

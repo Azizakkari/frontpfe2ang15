@@ -15,7 +15,7 @@ import { Reservation } from '../reservation';
 })
 export class GestionuserComponent {
   selectedUser: Utilisateur  = new Utilisateur();
-  utilisateurupdate: Utilisateur = { id: 0, nom: '', prenom: '', cin: 0, matricule: '', poste: '', email: '', adresse: '', telephone: 0 ,leservice: {
+  utilisateurupdate: Utilisateur = { id: 0, nom: '', prenom: '', cin: 0, matricule: '', poste: '', email: '', adresse: '', telephone: 0 ,password: '',leservice: {
     id: 0,
     nom: '',
     description: '',

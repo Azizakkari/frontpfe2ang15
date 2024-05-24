@@ -1,27 +1,16 @@
-
 <div>
     <div class="navbar-fixed-top">
-
-        <div class="bg-img">
-            <div class="container">
-              <div class="topnav">
-            <!--     <a href="#home">Home</a>
-                <a href="#news">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a> -->
-              </div>
-            </div>
-          </div>
-
+        <div class="bg-img" style="background-image: url('../../assets/images/7.jpg');"></div>
     </div>
+    
 
-    <div>
-        <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-top: 100px;">
+    <div class="content">
+        <nav class="navbar navbar-inverse navbar-fixed-top" style="margin-top: 160px;">
             <div class="container-fluid">
 
                 <div>
 
-                    <a routerLink="acceuil" routerLinkActive="active" class="navbar-brand"><img
+                    <a routerLink="/admin/acceuil" routerLinkActive="active" class="navbar-brand"><img
                             src="../assets/images/logo.svg" alt="Dispute Bills">
                     </a>
 
@@ -61,6 +50,17 @@
                         </ul>
 
 
+                        <li class="dropdown "><a class="dropdown-toggle" data-toggle="dropdown" href="#">Actions<span
+                            class="caret"></span></a>
+                    <ul class="dropdown-menu btn1">
+                      
+                    
+                        <li><a routerLink="/admin/demande-equipement" routerLinkActive="active">Demander Un 
+                                Equipement</a></li>
+                     
+                        <li><a routerLink="/admin/reserver-salle" routerLinkActive="active">Réserver Une Salle</a></li>
+
+                    </ul>
 
 
 
@@ -77,7 +77,7 @@
                         </ul>
                     </li>
                     <li><a routerLink="/admin/lienutile" routerLinkActive="active">Liens utlies</a></li>
-                    <li><a routerLink="/admin/actualité" routerLinkActive="active">actualité</a></li>
+                    <li><a routerLink="/admin/actualite" routerLinkActive="active">actualité</a></li>
                     <li><a routerLink="/admin/contact" routerLinkActive="active">Contact</a></li>
                     <li><a routerLink="/admin/mesforms" routerLinkActive="active">forms2</a></li>
 
@@ -86,9 +86,10 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li style="color: aliceblue; margin-top: 15px;">Bonjour {{this.authService.username}}</li>
-               
-<li style="margin-top: 8px; margin-left: 8px; margin-right: 7px;">      <button class="btn btn-danger" (click)="handleLogout()">Logout</button></li>
-              
+
+                    <li style="margin-top: 8px; margin-left: 8px; margin-right: 7px;"> <button class="btn btn-danger"
+                            (click)="handleLogout()">Logout</button></li>
+
                 </ul>
 
 
@@ -105,6 +106,9 @@
     </div>
 
 
-    <div style="margin-top: 170px;">
+    
+    
         <router-outlet></router-outlet>
         <app-footer></app-footer>
+    </div>
+

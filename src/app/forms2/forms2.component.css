@@ -1,48 +1,81 @@
 /* Style pour le tableau */
 table {
-	width: 100%; /* Tableau prend toute la largeur disponible */
-	border-collapse: collapse; /* Fusionner les bordures des cellules */
-  }
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 50px;
+  font-family: Arial, sans-serif;
+}
+
+/* Style pour les cellules du tableau */
+td, th {
+  padding: 12px 8px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+/* Style pour l'en-tête du tableau */
+thead {
+  background-color: #4CAF50; /* Couleur de fond pour l'en-tête */
+  color: white; /* Couleur du texte dans l'en-tête */
+}
+
+/* Style pour les cellules de données */
+tbody td {
+  background-color: #f9f9f9; /* Couleur de fond pour les cellules de données */
+}
+
+/* Style pour les lignes impaires du tableau */
+tbody tr:nth-child(odd) {
+  background-color: #f2f2f2; /* Couleur de fond pour les lignes impaires */
+}
+
+/* Style pour la première colonne */
+td:first-child, th:first-child {
+  width: 10%; /* Réduire la largeur de la première colonne */
+  text-align: center; /* Centrer le contenu de la cellule */
+  white-space: normal; /* Permettre le retour à la ligne */
+  word-wrap: break-word; /* Permettre le retour à la ligne pour les mots longs */
+}
+
+/* Style pour la deuxième colonne */
+td:nth-child(2), th:nth-child(2) {
+  width: 10%; /* Largeur de la deuxième colonne */
+}
+
+/* Style pour les autres colonnes */
+td:nth-child(3), th:nth-child(3),
+td:nth-child(4), th:nth-child(4),
+td:nth-child(5), th:nth-child(5),
+td:nth-child(6), th:nth-child(6) {
+  white-space: nowrap; /* Empêcher le renvoi à la ligne du texte */
+  text-overflow: ellipsis; /* Afficher des points de suspension pour le texte caché */
+}
+
+/* Hover effect for table rows */
+tbody tr:hover {
+  background-color: #ddd;
+}
+.table-title {
+  text-align: center;
+  margin-top: 70px;
+}
+
+.table-title h2 {
+  font-size: 24px;
+  color: #333; /* Couleur du texte */
+}
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
   
-  /* Style pour les cellules du tableau */
-  td, th {
-	padding: 8px; /* Ajouter de l'espace autour du texte dans les cellules */
-	text-align: center; /* Centrer le contenu des cellules */
-  }
-  
-  /* Style pour l'en-tête du tableau */
-  thead {
-	background-color: #333; /* Couleur de fond pour l'en-tête */
-	color: white; /* Couleur du texte dans l'en-tête */
-  }
-  
-  /* Style pour les cellules de données */
-  tbody td {
-	background-color: #f2f2f2; /* Couleur de fond pour les cellules de données */
-  }
-  
-  /* Style pour les lignes impaires du tableau */
-  tbody tr:nth-child(odd) {
-	background-color: #e0e0e0; /* Couleur de fond pour les lignes impaires */
-  }
-  
-  /* Style pour la première colonne */
-  td:first-child, th:first-child {
-	width: 20%; /* Largeur de la première colonne */
-	max-width: 150px; /* Largeur maximale pour éviter les noms de procédure trop longs */
-	white-space: nowrap; /* Empêcher le renvoi à la ligne du texte */
-	overflow: hidden; /* Cacher le texte dépassant de la largeur */
-	text-overflow: ellipsis; /* Afficher des points de suspension pour le texte caché */
-  }
-  
-  /* Style pour la deuxième colonne */
-  td:nth-child(2) {
-	width: 10%; /* Largeur de la deuxième colonne */
-  }
-  
-  /* Style pour les liens dans les cellules */
-  a {
-	color: blue; /* Couleur des liens */
-	text-decoration: none; /* Supprimer les soulignements des liens */
-  }
-  
+}
+
+.search-input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}

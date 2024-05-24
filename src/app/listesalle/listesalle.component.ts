@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./listesalle.component.css']
 })
 export class ListesalleComponent {
-  salleupdate: Salle = { id: 0, nom: '', nombre_de_salle: 0 };
+  salleupdate: Salle = { id: 0, nom: '', nombre_des_places: 0 };
 
   monsal: Salle=new Salle();
   mybolean: boolean=false;
