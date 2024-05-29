@@ -87,7 +87,7 @@ import { DemandeEquipementComponent } from './demande-equipement/demande-equipem
     MatButtonModule,
     MatListModule,
     MatDividerModule,
-    MatNativeDateModule
+    MatNativeDateModule,
     ],
   providers: [{
  provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true

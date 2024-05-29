@@ -1,153 +1,159 @@
-
 <div class="container-fluid">
-    <div class="panel panel-primary">
-        <div class="panel-heading text-center"><h3>LISTE DES RÉSERVATION</h3></div>
-        <div class="panel-body">
-            <mat-list>
-                <mat-divider></mat-divider>
-                <mat-divider></mat-divider>
-                <mat-divider></mat-divider>
-                <mat-list-item><h2>Liste des réservation</h2></mat-list-item>
-                
-                <mat-divider></mat-divider>
-                <mat-divider></mat-divider>
-                <mat-divider></mat-divider>
-               
-                <td> <button mat-raised-button color="success" (click)="evaluatebolean()"><b>Ajouter une réservation</b></button></td>
-             
-                <mat-divider></mat-divider>
-                <mat-divider></mat-divider>
-                <mat-divider></mat-divider>
-              </mat-list>
-     
-          <div class="container" *ngIf="mybolean">
-            <h2>Nouveau réservation</h2>
-            <form class="form-horizontal" action="/action_page.php">
-              
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="typemeeting">Typemeeting:</label>
-                <div class="col-sm-10">
-                  <input type="text" class="form-control" id="typemeeting" placeholder="entrez votre typemeeting" name="typemeeting" [(ngModel)]="newres.typemeeting">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="date_du_resrvation">Date_du_résrvation:</label>
-                <div class="col-sm-10">
-                  <input type="date" class="form-control" id="date_du_resrvation" placeholder="entrez votre date_du_resrvation" name="date_du_resrvation"  [(ngModel)]="newres.date_du_resrvation">
-                </div>
-              </div>
-              <div class="form-group">
-                <label class="control-label col-sm-2" for="date_fin">Date_fin:</label>
-                <div class="col-sm-10">
-                  <input type="date" class="form-control" id="date_fin" placeholder="entrez votre date_fin" name="date_fin"  [(ngModel)]="newres.date_fin">
-                </div>
-              
-              
-            </div>
-             
-              
-              <div class="form-group">
-                <div class="col-sm-offset-2 col-sm-10">
-                  <button type="submit" class="btn btn-primary" (click)=" addRes()" >Submit</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        
-   
-        
-         
-            <table class="table table-bordered text-center"  *ngIf="!mybolean">
-              <thead>
-                <tr class="success">
-                </tr>
-                
-                 <th >id</th>
-                  <th>typemeeting</th>
-                  <th>date_du_résrvation</th>
-                  <th>date_fin</th>
-                  <th>demandeur</th>
-                  <th>salle</th>
-                
-                    
-                 
-        
-                  <th>Suppression</th>
-                  <th> Mise à jour</th>
-                
-               
-        
-              </thead>
-              
-              <tbody>
-                
-             
-                    
-           
-                <tr *ngFor="let monreserv of  mesreservation">
-                        <td>{{monreserv.id}}</td>
-                        <td>{{monreserv.typemeeting}}</td>
-                        <td>{{monreserv.date_du_resrvation}}</td>
-                        <td>{{monreserv.date_fin}}</td>
-                        <td>{{monreserv.utilisateur?.nom}}</td>
-                        <td>{{monreserv.salle?.nom}}</td>
-                        
-                      
-                        <td><button  mat-raised-button color="warn" (click)="deletreservationbyid(monreserv.id)">Suppression</button></td>
-                        <td><button mat-raised-button color="primary" (click)="reservationDetails(monreserv.id)"> Mise à jour</button></td> 
-                    </tr>
-                  </table>
-                  <div class="panel panel-success" *ngIf="mybolean2">
-                    <div class="panel-heading text-center"><h3>Modification</h3></div>
-                    <div class="panel-body">
-                <div class="container" >
-                 
-                </div>
-                <mat-list>
-                    <mat-divider></mat-divider>
-                    <mat-divider></mat-divider>
-                    <mat-divider></mat-divider>
-                  </mat-list>
-                 
-                <form (ngSubmit)="Update()"  #form="ngForm">
-                    <div>
-                        
-                      <label><b>Nom: </b></label>
-                      <input type="text" class="form-control" id="nom" placeholder="entrez votre nom" name="nom"
-                        [(ngModel)]="reservationupdate.typemeeting">
-                    </div>
-                    <div>
-                      <label><b>Date du resrvation: </b></label>
-                      <input type="date" class="form-control" id="Date du resrvation" placeholder="entrez votre date du resrvation" name="Date du resrvation"
-                        [(ngModel)]="reservationupdate.date_du_resrvation">
-                    </div>
-                    <div>
-                      <label><b>Date fin: </b></label>
-                      <input type="date" class="form-control" id="Date fin" placeholder="entrez votre date fin" name="Date fin"
-                        [(ngModel)]="reservationupdate.date_fin">
-                    </div>
-                
-               
-                    
-                    <mat-list>
-                        <mat-divider></mat-divider>
-                       
-                      </mat-list>
-                    <button type="submit" mat-raised-button color="primary" >Mettre à jour</button>
-                    <mat-list>
-                        <mat-divider></mat-divider>
-                        <button type="submit" mat-raised-button color="warn" (click)="evaluatebolean2()" >Annuler</button>
-                      </mat-list>
-              
-                  </form>
-                     </div>
-                    </div>
-                
-        
+  <div class="panel panel-primary">
+    <div class="panel-heading text-center">
+      <h3>LISTE DES RÉSERVATION</h3>
+    </div>
+    <div class="panel-body">
+      <mat-list>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <h2>Liste des réservation</h2>
+        </mat-list-item>
+
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+
+        <td> <button mat-raised-button color="success" (click)="evaluatebolean()"><b>Ajouter une
+              réservation</b></button></td>
+
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+        <mat-divider></mat-divider>
+      </mat-list>
+
+      <div class="container" *ngIf="mybolean">
+        <h2>Nouveau réservation</h2>
+        <form class="form-horizontal" action="/action_page.php">
+
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="typemeeting">Typemeeting:</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="typemeeting" placeholder="entrez votre typemeeting"
+                name="typemeeting" [(ngModel)]="newres.typemeeting">
             </div>
           </div>
-        
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="date_du_resrvation">Date_du_résrvation:</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="date_du_resrvation"
+                placeholder="entrez votre date_du_resrvation" name="date_du_resrvation"
+                [(ngModel)]="newres.date_du_resrvation">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-sm-2" for="date_fin">Date_fin:</label>
+            <div class="col-sm-10">
+              <input type="date" class="form-control" id="date_fin" placeholder="entrez votre date_fin" name="date_fin"
+                [(ngModel)]="newres.date_fin">
+            </div>
+
+
+          </div>
+
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-primary" (click)=" addRes()">Submit</button>
+            </div>
+          </div>
+        </form>
       </div>
- 
 
 
+
+
+      <table class="table table-bordered text-center" *ngIf="!mybolean">
+        <thead>
+          <tr class="success">
+          </tr>
+
+          <th class="text-center">id</th>
+          <th class="text-center">typemeeting</th>
+          <th class="text-center">date_du_résrvation</th>
+          <th class="text-center">date_fin</th>
+          <th class="text-center">demandeur</th>
+          <th class="text-center">salle</th>
+          <th class="text-center">Suppression</th>
+          <th class="text-center">Mise à jour</th>
+
+
+
+        </thead>
+
+        <tbody>
+
+
+
+
+          <tr *ngFor="let monreserv of  mesreservation">
+            <td>{{monreserv.id}}</td>
+            <td>{{monreserv.typemeeting}}</td>
+            <td>{{monreserv.date_du_resrvation}}</td>
+            <td>{{monreserv.date_fin}}</td>
+            <td>{{monreserv.utilisateur?.nom}}</td>
+            <td>{{monreserv.salle?.nom}}</td>
+
+
+            <td><button mat-raised-button color="warn" (click)="deletreservationbyid(monreserv.id)">Suppression</button>
+            </td>
+            <td><button mat-raised-button color="primary" (click)="reservationDetails(monreserv.id)"> Mise à
+                jour</button></td>
+          </tr>
+      </table>
+      <div class="panel panel-success" *ngIf="mybolean2">
+        <div class="panel-heading text-center">
+          <h3>Modification</h3>
+        </div>
+        <div class="panel-body">
+          <div class="container">
+
+          </div>
+          <mat-list>
+            <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
+            <mat-divider></mat-divider>
+          </mat-list>
+
+          <form (ngSubmit)="Update()" #form="ngForm">
+            <div>
+
+              <label><b>Nom: </b></label>
+              <input type="text" class="form-control" id="nom" placeholder="entrez votre nom" name="nom"
+                [(ngModel)]="reservationupdate.typemeeting">
+            </div>
+            <div>
+              <label><b>Date du resrvation: </b></label>
+              <input type="date" class="form-control" id="Date du resrvation"
+                placeholder="entrez votre date du resrvation" name="Date du resrvation"
+                [(ngModel)]="reservationupdate.date_du_resrvation">
+            </div>
+            <div>
+              <label><b>Date fin: </b></label>
+              <input type="date" class="form-control" id="Date fin" placeholder="entrez votre date fin" name="Date fin"
+                [(ngModel)]="reservationupdate.date_fin">
+            </div>
+
+
+
+            <mat-list>
+              <mat-divider></mat-divider>
+
+            </mat-list>
+            <button type="submit" mat-raised-button color="primary">Mettre à jour</button>
+            <mat-list>
+              <mat-divider></mat-divider>
+              <button type="submit" mat-raised-button color="warn" (click)="evaluatebolean2()">Annuler</button>
+            </mat-list>
+
+          </form>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+</div>

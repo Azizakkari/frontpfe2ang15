@@ -1,3 +1,5 @@
+import { TypeEquipement } from "./listequipemet/type-equipement.enum";
+
 export class Equipement{
 
     id?: number;
@@ -5,4 +7,6 @@ export class Equipement{
 	configuration?: String;
 	etat?: String;
     reservable?:Boolean;
+    typeEquipement? : TypeEquipement;
+
 }

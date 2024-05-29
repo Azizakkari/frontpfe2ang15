@@ -1,55 +1,70 @@
-/* Style pour le formulaire */
-.my-form {
-  max-width: 400px;
-  margin: auto;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: rgba(255, 255, 255, 0.9); /* Fond semi-transparent blanc */
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2); /* Ombre légère */
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Vertically center */
+  background-color: #c2dfed; /* Background color for the entire page */
 }
 
-/* Style pour le titre */
-mat-toolbar span {
-  color: #333;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-/* Style pour les étiquettes des champs */
-.mat-form-field label {
-  color: #333;
-  font-weight: bold;
-}
-
-/* Style pour les champs de saisie */
-.mat-form-field input {
+.register-container {
+  display: flex;
+  justify-content: center;
   width: 100%;
-  font-size: 16px;
 }
 
-/* Style pour les boutons */
-.mat-raised-button {
+.register-panel {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 20px; /* Add some space on the sides */
+  padding: 20px;
+  background-color: white; /* Background color of the card */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Shadow for the card */
+  border-radius: 8px;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-header {
+  background-color: #3f51b5; /* Background color of the top part */
+  width: 100%;
+  padding: 20px 0;
+  border-radius: 8px 8px 0 0; /* Rounded top */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo {
+  width: 200px; /* Increase logo size */
+  height: 200px;
+}
+
+.register-header {
+  font-family: 'Arial', sans-serif; /* Change font according to preference */
+  font-size: 24px;
+  color: white; /* Text color */
+  font-weight: bold; /* Bold text */
+  margin-top: 20px; /* Add space between logo and title */
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn-block {
+  width: 100%;
   margin-top: 20px;
 }
 
-/* Style pour les messages d'erreur */
-.mat-error {
-  color: #d32f2f; /* Rouge */
+.login-link {
+  margin-top: 20px;
 }
 
-/* Style pour les messages d'erreur dans les champs requis */
-.mat-form-field.mat-focused .mat-form-field-label {
-  color: #1976d2; /* Bleu */
-}
-
-/* Style pour les champs requis */
-.required {
-  color: #d32f2f; /* Rouge */
-}
-
-/* Style pour le fond de la page */
-body {
-  background-image: url('https://example.com/chemin/vers/votre/image.jpg');
-  background-size: cover;
-  background-position: center;
+.login-btn {
+  background-color: #f44336; /* Different color for the Register button */
+  color: white;
 }

@@ -27,19 +27,20 @@ import { ReserverSalleComponent } from './reserver-salle/reserver-salle.componen
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', redirectTo: "login", pathMatch: "full" },
+  { path: 'login/register', component: RegisterComponent },
   {
     path: 'admin', component: AdmintemplateComponent,canActivate: [AuthenticationGuard],
     
  
      children: [
-      { path: 'actualite',component:ActualiteComponent},
+      { path: 'actualite',component: ActualiteComponent},
       { path: 'presentation', component: PresentationComponent },
       { path: 'mesforms', component: Forms2Component },
       { path: 'contact', component: ContactComponent},
       { path: 'gallerie', component: GallerieComponent},
       { path: 'acceuil', component: AcceuilcnstnComponent},
       { path: '', redirectTo: "acceuil", pathMatch: "full" },
-   
+     
        // Redirection vers acceuilcnstn
      
     

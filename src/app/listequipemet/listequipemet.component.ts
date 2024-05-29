@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Equipement } from '../equipement';
 import { EquipementService } from '../messervices/equipement.service';
 import { Router } from '@angular/router';
+import { TypeEquipement } from './type-equipement.enum'; 
 
 @Component({
   selector: 'app-listequipemet',
@@ -15,6 +16,7 @@ export class ListequipemetComponent {
   mybolean2: boolean=false
   equipement?: Equipement[];
   newequipe: Equipement=new  Equipement();
+  typeEquipementOptions: TypeEquipement[] = Object.values(TypeEquipement); 
   constructor(private mesusers: EquipementService, private router: Router){}
   ngOnInit(): void{
    

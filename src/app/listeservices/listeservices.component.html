@@ -88,16 +88,16 @@
           </form>
         </div>
   
-        <div *ngIf="!mybolean">
-          <table class="table table-bordered text-center">
+
+          <table class="table table-bordered text-center" *ngIf="!mybolean">
             <thead>
               <tr class="success">
-                <th>Id</th>
-                <th>Nom</th>
-                <th>Description</th>
-                <th>Direction</th>
-                <th>Suppression</th>
-                <th>Mise à jour</th>
+                <th class="text-center">Id</th>
+                <th class="text-center">Nom</th>
+                <th class="text-center">Description</th>
+                <th class="text-center">Direction</th>
+                <th class="text-center">Suppression</th>
+                <th class="text-center">Mise à jour</th>
               </tr>
             </thead>
             <tbody>
@@ -196,7 +196,7 @@
         </div>
       </div>
     </div>
-  </div>
+
   
 
 

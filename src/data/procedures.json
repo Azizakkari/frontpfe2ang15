@@ -762,11 +762,26 @@
         "formulaires": [
             {
                 "id": 1,
-                "nominstruction": "Maitrise des enregistrements techniques ",
+                "nomforms": "Maitrise des enregistrements techniques ",
                 "code": "IT01",
                 "revision": "00",
                 "date_d_application": "15/02/23"
             }
+        ]
+    },
+    {
+        "id": 25,
+        "nom": "Instruction Elaboration d'une fiche de vie",
+        "formulaires":[
+            {
+                "id": 1,
+                "nomforms": "Elaboration d une fiche de vie",
+                "code":"I.QUZ.001",
+                "revision":"01",
+                "date_d_application":"04/01/10",
+                "lien":"fiche de vie.pdf"
+                }
+
         ]
     }
     ]

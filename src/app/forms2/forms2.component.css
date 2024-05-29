@@ -1,9 +1,53 @@
+.panel {
+  margin: 20px auto;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.panel-primary {
+  border-color: #4CAF50;
+}
+
+.panel-heading {
+  background-color: #4CAF50;
+  color: #fff;
+  padding: 15px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  text-align: center;
+}
+
+.panel-heading h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.panel-body {
+  padding: 15px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0 20px 0;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.search-input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
 /* Style pour le tableau */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 50px;
-  font-family: Arial, sans-serif;
+  margin-top: 20px;
 }
 
 /* Style pour les cellules du tableau */
@@ -15,31 +59,31 @@ td, th {
 
 /* Style pour l'en-tête du tableau */
 thead {
-  background-color: #4CAF50; /* Couleur de fond pour l'en-tête */
-  color: white; /* Couleur du texte dans l'en-tête */
+  background-color: #4CAF50;
+  color: white;
 }
 
 /* Style pour les cellules de données */
 tbody td {
-  background-color: #f9f9f9; /* Couleur de fond pour les cellules de données */
+  background-color: #f9f9f9;
 }
 
 /* Style pour les lignes impaires du tableau */
 tbody tr:nth-child(odd) {
-  background-color: #f2f2f2; /* Couleur de fond pour les lignes impaires */
+  background-color: #f2f2f2;
 }
 
 /* Style pour la première colonne */
 td:first-child, th:first-child {
-  width: 10%; /* Réduire la largeur de la première colonne */
-  text-align: center; /* Centrer le contenu de la cellule */
-  white-space: normal; /* Permettre le retour à la ligne */
-  word-wrap: break-word; /* Permettre le retour à la ligne pour les mots longs */
+  width: 15%;
+  text-align: center;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
 /* Style pour la deuxième colonne */
 td:nth-child(2), th:nth-child(2) {
-  width: 10%; /* Largeur de la deuxième colonne */
+  width: 10%;
 }
 
 /* Style pour les autres colonnes */
@@ -47,35 +91,40 @@ td:nth-child(3), th:nth-child(3),
 td:nth-child(4), th:nth-child(4),
 td:nth-child(5), th:nth-child(5),
 td:nth-child(6), th:nth-child(6) {
-  white-space: nowrap; /* Empêcher le renvoi à la ligne du texte */
-  text-overflow: ellipsis; /* Afficher des points de suspension pour le texte caché */
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 
 /* Hover effect for table rows */
 tbody tr:hover {
   background-color: #ddd;
 }
-.table-title {
+
+/* Style pour le bouton */
+.btn {
+  display: inline-block;
+  padding: 6px 12px;
+  margin-bottom: 0;
+  font-size: 14px;
+  font-weight: normal;
+  line-height: 1.42857143;
   text-align: center;
-  margin-top: 70px;
-}
-
-.table-title h2 {
-  font-size: 24px;
-  color: #333; /* Couleur du texte */
-}
-.search-input {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid #ccc;
+  white-space: nowrap;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  border: 1px solid transparent;
   border-radius: 4px;
-  font-size: 16px;
-  
+  user-select: none;
 }
 
-.search-input:focus {
+.btn-primary {
+  color: #fff;
+  background-color: #4CAF50;
   border-color: #4CAF50;
-  outline: none;
+}
+
+.btn-primary:hover {
+  background-color: #45a049;
+  border-color: #45a049;
 }

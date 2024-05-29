@@ -9,6 +9,7 @@ import jsondata from '../../data/procedures.json';
 export class Forms2Component implements OnInit {
   procedures: any[] = jsondata.procedures;
   searchText: any; 
+  src: string = "../../data/formulaires/";
   constructor() { }
 
   ngOnInit(): void {
