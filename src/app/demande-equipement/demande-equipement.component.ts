@@ -34,7 +34,7 @@ export class DemandeEquipementComponent  implements OnInit{
     },
 
   };
-  constructor(private mesusers: EquipementService , private utilisateurservice: UtilisateursService ,private demandeservice: DemandeService, private router: Router,  private notificationService: NotificationService){}
+  constructor( private utilisateurservice: UtilisateursService ,private demandeservice: DemandeService, private router: Router,  private notificationService: NotificationService){}
   ngOnInit(): void{
     this.utilisateurservice.getallUsers().subscribe(data => {
       this.lesutilisateurs = data;
@@ -61,4 +61,5 @@ export class DemandeEquipementComponent  implements OnInit{
       }
     );
   }
+
 }

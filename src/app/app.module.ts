@@ -42,6 +42,7 @@ import { ActualiteComponent } from './actualite/actualite.component';
 import { ReserverSalleComponent } from './reserver-salle/reserver-salle.component';
 import { DemandeEquipementComponent } from './demande-equipement/demande-equipement.component';
 import { AdminNotificationsComponent } from './admin-notifications/admin-notifications.component';
+import { ListedemandeComponent } from './listedemande/listedemande.component';
 
 
 
@@ -72,6 +73,7 @@ import { AdminNotificationsComponent } from './admin-notifications/admin-notific
     ReserverSalleComponent,
     DemandeEquipementComponent,
     AdminNotificationsComponent,
+    ListedemandeComponent,
 
     
     
