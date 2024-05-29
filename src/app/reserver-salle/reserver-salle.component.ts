@@ -6,6 +6,7 @@ import { Salle } from '../salle';
 import { Utilisateur } from '../Utilisateur';
 import { UtilisateursService } from '../messervices/utilisateurs.service';
 import { SalleService } from '../messervices/salle.service';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-reserver-salle',
@@ -36,7 +37,7 @@ export class ReserverSalleComponent implements OnInit {
   };
   errorMessage: string | null = null;
 
-  constructor(private mesusers: ReservationService, private salleservice: SalleService, private utilisateurservice: UtilisateursService, private router: Router) { }
+  constructor(private mesusers: ReservationService, private salleservice: SalleService, private utilisateurservice: UtilisateursService, private router: Router, private notificationService: NotificationService) { }
 
   ngOnInit(): void {
     this.salleservice.getAllsalle().subscribe(data => {
@@ -62,7 +63,8 @@ export class ReserverSalleComponent implements OnInit {
           this.errorMessage = response.message; // Set the error message from the response
           alert(this.errorMessage); // Display the error message
         } else {
-          console.log('Réservation added successfully');
+          this.notificationService.addNotification('reservation', 'Nouvelle réservation de salle');
+      
           alert('Réservation added successfully');
           this.errorMessage = null; // Clear any previous error message
           this.ngOnInit();

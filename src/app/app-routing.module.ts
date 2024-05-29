@@ -22,6 +22,7 @@ import { NotauthorizedComponent } from './notauthorized/notauthorized.component'
 import { ActualiteComponent } from './actualite/actualite.component';
 import { DemandeEquipementComponent } from './demande-equipement/demande-equipement.component';
 import { ReserverSalleComponent } from './reserver-salle/reserver-salle.component';
+import { AdminNotificationsComponent } from './admin-notifications/admin-notifications.component';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
       { path: 'gestionsalles', component: ListesalleComponent},
       { path: 'gestioncategorie', component: ListecategorieComponent,canActivate :[AuthorizationGuard], data :{role:"ADMIN"}  },
       { path: 'gestionequipement', component: ListequipemetComponent ,canActivate :[AuthorizationGuard], data :{role:"ADMIN"} },
+      {path: 'notification' , component: AdminNotificationsComponent,canActivate:[AuthorizationGuard], data :{role:"ADMIN"}},
       { path: 'gestionreservation', component: ListereservationComponent},
       { path: 'demande-equipement',component :DemandeEquipementComponent},
       { path: 'reserver-salle',component : ReserverSalleComponent},

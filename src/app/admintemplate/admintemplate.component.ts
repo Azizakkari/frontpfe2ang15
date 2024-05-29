@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../messervices/auth.service';
 import { Router } from '@angular/router';
+import { NotificationService } from '../notification.service';
 
 
 @Component({
@@ -9,9 +10,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./admintemplate.component.css']
 })
 export class AdmintemplateComponent {
-  constructor(public authService: AuthService, private router: Router) { }
+  notifications: { type: string, message: string }[] = [];
+  constructor(public authService: AuthService, private router: Router,private notificationService: NotificationService) { }
 
   ngOnInit() {
+    this.notificationService.notifications$.subscribe(
+      notifications => this.notifications = notifications
+    );
   }
   
 

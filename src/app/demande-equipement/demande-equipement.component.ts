@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { UtilisateursService } from '../messervices/utilisateurs.service';
 import { DemandeService } from '../messervices/demande.service';
 import { Utilisateur } from '../Utilisateur';
+import { NotificationService } from '../notification.service';
 
 @Component({
   selector: 'app-demande-equipement',
@@ -33,7 +34,7 @@ export class DemandeEquipementComponent  implements OnInit{
     },
 
   };
-  constructor(private mesusers: EquipementService , private utilisateurservice: UtilisateursService ,private demandeservice: DemandeService, private router: Router  ){}
+  constructor(private mesusers: EquipementService , private utilisateurservice: UtilisateursService ,private demandeservice: DemandeService, private router: Router,  private notificationService: NotificationService){}
   ngOnInit(): void{
     this.utilisateurservice.getallUsers().subscribe(data => {
       this.lesutilisateurs = data;
@@ -48,7 +49,7 @@ export class DemandeEquipementComponent  implements OnInit{
     this.demandeservice.ajouterdemande(this.newdemande).subscribe(
 
       () => {
-        console.log('Demande added successfully');
+        this.notificationService.addNotification('equipment', 'Nouvelle demande d\'équipement');
         alert("Demande added successfully");
 
      
