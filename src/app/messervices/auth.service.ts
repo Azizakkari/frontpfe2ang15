@@ -9,7 +9,7 @@ import { jwtDecode } from 'jwt-decode';
 export class AuthService {
   
   isAuthenticated:boolean=false;
- roles:any; 
+ public roles:any; 
  username:any;
  accessToken!:any;
 
@@ -29,6 +29,7 @@ this.isAuthenticated=true;
     this.username=decodedJwt.sub;
     this.roles=decodedJwt.scope;
     window.localStorage.setItem("accessToken",this.accessToken);  
+    console.log(this.roles);
 
   }
   logout(){

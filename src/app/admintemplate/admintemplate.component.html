@@ -29,7 +29,7 @@
 
 
 
-                    <li class="dropdown "><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administrateur<span
+                    <li class="dropdown " *ngIf="authService.roles.includes('ADMIN')"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Administrateur<span
                                 class="caret"></span></a>
                         <ul class="dropdown-menu btn1">
                             <li><a routerLink="/admin/gestionusers" routerLinkActive="active">Gestion Des
@@ -82,7 +82,7 @@
                 
                     <li><a routerLink="/admin/mesforms" routerLinkActive="active">Formulaire interne</a></li>
                     
-      <li class="dropdown">
+      <li class="dropdown" *ngIf="authService.roles.includes('ADMIN')">
         <a routerLink="/admin/notification" class="dropdown-toggle" data-toggle="dropdown" href="#">
           Notifications <span class="badge">{{ notifications.length }}</span>
           <span class="caret"></span>
