@@ -2,6 +2,10 @@ import { Component } from '@angular/core';
 import { Reservation } from '../reservation';
 import { ReservationService } from '../messervices/reservation.service';
 import { Router } from '@angular/router';
+import { Utilisateur } from '../Utilisateur';
+import { Salle } from '../salle';
+import { SalleService } from '../messervices/salle.service';
+import { UtilisateursService } from '../messervices/utilisateurs.service';
 
 @Component({
   selector: 'app-listereservation',
@@ -13,13 +17,14 @@ export class ListereservationComponent {
   reservationupdate: Reservation = { id: 0, typemeeting: '', date_du_resrvation:undefined ,date_fin:undefined };
 
   mybolean2: boolean=false;
-
+  messalles: Salle[] = [];
+  lesutilisateurs: Utilisateur[] = [];
   monreserv: Reservation=new Reservation();
   mybolean: boolean=false;
   mesreservation?: Reservation[];
   newres: Reservation=new  Reservation();
 
-  constructor(private mesusers: ReservationService, private router: Router){}
+  constructor(private mesusers: ReservationService, private router: Router , private salleservice: SalleService, private utilisateurservice: UtilisateursService){}
   ngOnInit(): void{
    
     this.mesusers.getAllreservation().subscribe(data=>{
@@ -28,6 +33,19 @@ export class ListereservationComponent {
     }, err=>{
         console.log(err);
 
+    });
+    this.salleservice.getAllsalle().subscribe(data => {
+      this.messalles = data;
+      console.log(this.messalles);
+    }, err => {
+      console.log(err);
+    });
+
+    this.utilisateurservice.getallUsers().subscribe(data => {
+      this.lesutilisateurs = data;
+      console.log(this.lesutilisateurs);
+    }, err => {
+      console.log(err);
     });
   }
   deletreservationbyid(id?:number) {

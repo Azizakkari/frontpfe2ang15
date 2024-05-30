@@ -2,6 +2,8 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { jwtDecode } from 'jwt-decode';
+import { Utilisateur } from '../Utilisateur';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -42,4 +44,8 @@ this.isAuthenticated=true;
      this.router.navigateByUrl("/admin/acceuil");
     }
   }
+  register(user: Utilisateur): Observable<Utilisateur>{
+    return this.http.post("http://localhost:8080/users/register",user);
+  }
+ 
 }

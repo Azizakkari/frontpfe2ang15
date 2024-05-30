@@ -1,109 +1,23 @@
 {
+    
+
     "procedures": [
         {
             "id": 1,
-            "nom": "Traitement des analyses et des essais internes et externes",
-            "formulaires": [
+            "nom": "Instruction Elaboration d'une fiche de vie",
+            "formulaires":[
                 {
                     "id": 1,
-                    "nomforms": "Fiche de demande d_analyse (Echantillon)",
-                    "code": "FE01-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 2,
-                    "nomforms": "Fiche d’étude de faisabilités",
-                    "code": "FE02-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 3,
-                    "nomforms": "Registre de suivi des propositions des analyses",
-                    "code": "FE03-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 4,
-                    "nomforms": "Liste des techniques d’analyse/Prix ",
-                    "code": "FE04-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 5,
-                    "nomforms": "Offre de prix",
-                    "code": "FE05-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 6,
-                    "nomforms": "Lettre de refus",
-                    "code": "FE06-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 7,
-                    "nomforms": "Registre de réception des échantillons",
-                    "code": "FE07-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 8,
-                    "nomforms": "Fiche d’analyse",
-                    "code": "FE08-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 9,
-                    "nomforms": "Etiquette d’identification des échantillons",
-                    "code": "FE09-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 10,
-                    "nomforms": "Page de garde du rapport d’analyse",
-                    "code": "FE10-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 11,
-                    "nomforms": "Ordre de service",
-                    "code": "FE11-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 12,
-                    "nomforms": "Rapport d’analyse",
-                    "code": "FE12-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 13,
-                    "nomforms": "Rapport d’analyse de remplacement",
-                    "code": "FE13-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                },
-                {
-                    "id": 14,
-                    "nomforms": "Demande de facturation",
-                    "code": "FE14-PQ07",
-                    "revision": "05",
-                    "date_d_application": "23/08/23"
-                }
+                    "nomforms": "Elaboration d une fiche de vie",
+                    "code":"I.QUZ.001",
+                    "revision":"01",
+                    "date_d_application":"04/01/10",
+                    "lien":"fiche de vie.pdf"
+                    }
+    
             ]
-        },
+        }
+        ,
         {
             "id": 2,
             "nom": "Traitement des réclamations client",
@@ -771,19 +685,109 @@
     },
     {
         "id": 25,
-        "nom": "Instruction Elaboration d'une fiche de vie",
-        "formulaires":[
+        "nom": "Traitement des analyses et des essais internes et externes",
+        "formulaires": [
             {
                 "id": 1,
-                "nomforms": "Elaboration d une fiche de vie",
-                "code":"I.QUZ.001",
-                "revision":"01",
-                "date_d_application":"04/01/10",
-                "lien":"fiche de vie.pdf"
-                }
-
+                "nomforms": "Fiche de demande d_analyse (Echantillon)",
+                "code": "FE01-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 2,
+                "nomforms": "Fiche d’étude de faisabilités",
+                "code": "FE02-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 3,
+                "nomforms": "Registre de suivi des propositions des analyses",
+                "code": "FE03-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 4,
+                "nomforms": "Liste des techniques d’analyse/Prix ",
+                "code": "FE04-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 5,
+                "nomforms": "Offre de prix",
+                "code": "FE05-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 6,
+                "nomforms": "Lettre de refus",
+                "code": "FE06-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 7,
+                "nomforms": "Registre de réception des échantillons",
+                "code": "FE07-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 8,
+                "nomforms": "Fiche d’analyse",
+                "code": "FE08-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 9,
+                "nomforms": "Etiquette d’identification des échantillons",
+                "code": "FE09-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 10,
+                "nomforms": "Page de garde du rapport d’analyse",
+                "code": "FE10-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 11,
+                "nomforms": "Ordre de service",
+                "code": "FE11-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 12,
+                "nomforms": "Rapport d’analyse",
+                "code": "FE12-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 13,
+                "nomforms": "Rapport d’analyse de remplacement",
+                "code": "FE13-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            },
+            {
+                "id": 14,
+                "nomforms": "Demande de facturation",
+                "code": "FE14-PQ07",
+                "revision": "05",
+                "date_d_application": "23/08/23"
+            }
         ]
     }
+   
     ]
 }
 

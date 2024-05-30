@@ -1,4 +1,5 @@
 .panel {
+  margin-top: 50px;
   margin: 20px auto;
   width: 100%;
   background-color: #fff;
@@ -7,16 +8,17 @@
 }
 
 .panel-primary {
-  border-color: #4CAF50;
+  border-color: #68c0d0;
 }
 
 .panel-heading {
-  background-color: #4CAF50;
+  background-color: #0a5c5c;
   color: #fff;
   padding: 15px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   text-align: center;
+  margin-top: 50px;
 }
 
 .panel-heading h2 {
@@ -39,7 +41,7 @@
 }
 
 .search-input:focus {
-  border-color: #4CAF50;
+  border-color: #98af4c;
   outline: none;
 }
 
@@ -59,7 +61,7 @@ td, th {
 
 /* Style pour l'en-tête du tableau */
 thead {
-  background-color: #4CAF50;
+  background-color: #131313;
   color: white;
 }
 
@@ -120,11 +122,12 @@ tbody tr:hover {
 
 .btn-primary {
   color: #fff;
-  background-color: #4CAF50;
-  border-color: #4CAF50;
+  background-color: #0a5c5c;
+  border-color: #c7c9c8;
 }
 
 .btn-primary:hover {
   background-color: #45a049;
   border-color: #45a049;
 }
+

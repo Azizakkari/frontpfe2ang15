@@ -64,7 +64,7 @@ export class ReserverSalleComponent implements OnInit {
           alert(this.errorMessage); // Display the error message
         } else {
           this.notificationService.addNotification('reservation', 'Nouvelle réservation de salle');
-      
+          console.log('Réservation added successfully');
           alert('Réservation added successfully');
           this.errorMessage = null; // Clear any previous error message
           this.ngOnInit();
