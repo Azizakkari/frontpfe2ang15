@@ -43,6 +43,9 @@ import { ReserverSalleComponent } from './reserver-salle/reserver-salle.componen
 import { DemandeEquipementComponent } from './demande-equipement/demande-equipement.component';
 import { AdminNotificationsComponent } from './admin-notifications/admin-notifications.component';
 import { ListedemandeComponent } from './listedemande/listedemande.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+
+
 
 
 
@@ -92,6 +95,7 @@ import { ListedemandeComponent } from './listedemande/listedemande.component';
     MatListModule,
     MatDividerModule,
     MatNativeDateModule,
+    FullCalendarModule 
     ],
   providers: [{
  provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true

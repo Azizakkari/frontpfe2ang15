@@ -5,15 +5,7 @@
       </div>
       <div class="panel-body">
         <mat-list>
-          <mat-divider></mat-divider>
-          <mat-divider></mat-divider>
-          <mat-divider></mat-divider>
-          <mat-list-item>
-            <h2>Liste des services</h2>
-          </mat-list-item>
-          <mat-divider></mat-divider>
-          <mat-divider></mat-divider>
-          <mat-divider></mat-divider>
+       
           <td> <button mat-raised-button color="success" (click)="evaluateboleann()"><b>Ajouter un service</b></button></td>
           <mat-divider></mat-divider>
           <mat-divider></mat-divider>
@@ -34,13 +26,13 @@
                 [(ngModel)]="monservice.nom"
                 required
                 minlength="2"
-                maxlength="30"
+                maxlength="50"
                 #nom="ngModel"
               />
               <div *ngIf="nom.invalid && (nom.dirty || nom.touched)" class="text-danger">
                 <div *ngIf="nom.errors?.['required']">Le nom est requis.</div>
                 <div *ngIf="nom.errors?.['minlength']">Le nom doit comporter au moins 2 caractères.</div>
-                <div *ngIf="nom.errors?.['maxlength']">Le nom ne doit pas dépasser 30 caractères.</div>
+                <div *ngIf="nom.errors?.['maxlength']">Le nom ne doit pas dépasser 50 caractères.</div>
               </div>
             </div>
   
