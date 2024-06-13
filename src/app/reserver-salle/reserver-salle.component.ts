@@ -55,27 +55,43 @@ export class ReserverSalleComponent implements OnInit {
     });
   }
 
+  validateDates(): boolean {
+    if (this.reserv.date_du_resrvation && this.reserv.date_fin) {
+      const startDate = new Date(this.reserv.date_du_resrvation);
+      const endDate = new Date(this.reserv.date_fin);
+      if (endDate < startDate) {
+        this.errorMessage = 'La date de fin ne peut pas être antérieure à la date de début.';
+        return false;
+      }
+    }
+    return true;
+  }
+
   addRes() {
+    if (!this.validateDates()) {
+      alert(this.errorMessage); // Afficher le message d'erreur
+      return;
+    }
+
     console.log(this.reserv);
     this.mesusers.ajouterreservation(this.reserv).subscribe(
       (response) => {
         if (response.message) {
-          this.errorMessage = response.message; // Set the error message from the response
-          alert(this.errorMessage); // Display the error message
+          this.errorMessage = response.message; // Définir le message d'erreur à partir de la réponse
+          alert(this.errorMessage); // Afficher le message d'erreur
         } else {
           this.notificationService.addNotification('reservation', 'Nouvelle réservation de salle');
-          console.log('Réservation added successfully');
-          alert('Réservation added successfully');
-          this.errorMessage = null; // Clear any previous error message
+          console.log('Réservation ajoutée avec succès');
+          alert('Réservation ajoutée avec succès');
+          this.errorMessage = null; // Effacer tout message d'erreur précédent
           this.ngOnInit();
         }
       },
       (error) => {
-        console.error('Error adding Réservation:', error);
+        console.error('Erreur lors de l\'ajout de la réservation:', error);
         this.errorMessage = 'Une erreur s\'est produite. Veuillez réessayer plus tard.';
-        alert(this.errorMessage); // Display a generic error message
+        alert(this.errorMessage); // Afficher un message d'erreur générique
       }
     );
   }
-
 }

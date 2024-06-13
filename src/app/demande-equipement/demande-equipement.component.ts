@@ -14,28 +14,19 @@ import { NotificationService } from '../notification.service';
   styleUrls: ['./demande-equipement.component.css']
 })
 
-
-export class DemandeEquipementComponent  implements OnInit{
-
+export class DemandeEquipementComponent implements OnInit {
   newdemande: Demande = new Demande();
   lesutilisateurs: Utilisateur[] = [];
   equipement?: Equipement[];
-  
-  demande: Demande = {
-    id: 0,
-    date_demande: undefined,
-    objet_demande: '',
-    configuration: '',
-    etat_demande: '',
-    utilisateur: {
-      id: 0,
-      nom: '',
-      prenom: '',
-    },
 
-  };
-  constructor( private utilisateurservice: UtilisateursService ,private demandeservice: DemandeService, private router: Router,  private notificationService: NotificationService){}
-  ngOnInit(): void{
+  constructor(
+    private utilisateurservice: UtilisateursService,
+    private demandeservice: DemandeService,
+    private router: Router,
+    private notificationService: NotificationService
+  ) {}
+
+  ngOnInit(): void {
     this.utilisateurservice.getallUsers().subscribe(data => {
       this.lesutilisateurs = data;
       console.log(this.lesutilisateurs);
@@ -43,16 +34,16 @@ export class DemandeEquipementComponent  implements OnInit{
       console.log(err);
     });
   }
-  
+
   addequip() {
+    // Définir la date de demande à la date actuelle
+    this.newdemande.date_demande = new Date();
+    
     console.log(this.newdemande);
     this.demandeservice.ajouterdemande(this.newdemande).subscribe(
-
       () => {
         this.notificationService.addNotification('equipment', 'Nouvelle demande d\'équipement');
         alert("Demande added successfully");
-
-     
         this.ngOnInit();
       },
       (error) => {
@@ -61,5 +52,4 @@ export class DemandeEquipementComponent  implements OnInit{
       }
     );
   }
-
 }

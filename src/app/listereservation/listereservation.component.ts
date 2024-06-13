@@ -6,7 +6,6 @@ import { Utilisateur } from '../Utilisateur';
 import { Salle } from '../salle';
 import { SalleService } from '../messervices/salle.service';
 import { UtilisateursService } from '../messervices/utilisateurs.service';
-import dayGridPlugin from '@fullcalendar/daygrid';
 
 @Component({
   selector: 'app-listereservation',
@@ -14,8 +13,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
   styleUrls: ['./listereservation.component.css']
 })
 export class ListereservationComponent {
-  calendarPlugins = [dayGridPlugin]; // important!
-  calendarEvents = [];
+  
 
   reservationupdate: Reservation = { id: 0, typemeeting: '', date_du_resrvation:undefined ,date_fin:undefined };
 
@@ -33,7 +31,6 @@ export class ListereservationComponent {
     this.mesusers.getAllreservation().subscribe(data=>{
       this.mesreservation = data;
       console.log(this.mesreservation);
-      
     }, err=>{
         console.log(err);
 

@@ -43,8 +43,7 @@ import { ReserverSalleComponent } from './reserver-salle/reserver-salle.componen
 import { DemandeEquipementComponent } from './demande-equipement/demande-equipement.component';
 import { AdminNotificationsComponent } from './admin-notifications/admin-notifications.component';
 import { ListedemandeComponent } from './listedemande/listedemande.component';
-import { FullCalendarModule } from '@fullcalendar/angular';
-
+import { FullCalendarModule } from '@fullcalendar/angular'; // Import FullCalendar
 
 
 
@@ -95,7 +94,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     MatListModule,
     MatDividerModule,
     MatNativeDateModule,
-    FullCalendarModule 
+    FullCalendarModule
     ],
   providers: [{
  provide: HTTP_INTERCEPTORS, useClass: AppHttpInterceptor, multi: true
@@ -103,4 +102,6 @@ import { FullCalendarModule } from '@fullcalendar/angular';
   }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}
