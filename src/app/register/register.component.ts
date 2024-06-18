@@ -21,7 +21,7 @@ export class RegisterComponent implements OnInit {
       cin: ['', Validators.required],
       matricule: ['', Validators.required],
       poste: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
+      email: ['User', [Validators.required, Validators.email]],
       adresse: ['', Validators.required],
       telephone: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
